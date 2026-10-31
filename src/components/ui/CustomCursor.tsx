@@ -9,6 +9,7 @@ import React, { useEffect, useRef } from 'react';
  * - Directional antique-gold arrow that rotates toward mouse movement.
  * - Automatic disable on touch devices, mobile screens, or prefers-reduced-motion.
  * - Non-interfering pointer-events: none; preserves native cursor functionality.
+ * - Smart RAF scheduling: idle on mount, runs only during active animation, stops when settled.
  */
 export const CustomCursor: React.FC = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -39,13 +40,26 @@ export const CustomCursor: React.FC = () => {
     let targetAngle = 0;
     let currentAngle = 0;
     let isMoving = false;
-    let moveTimeout: ReturnType<typeof setTimeout>;
+    let moveTimeout: ReturnType<typeof setTimeout> | null = null;
     let isHoveringInteractive = false;
     let isVisible = false;
 
-    let animationFrameId: number;
+    let animationFrameId: number | null = null;
+    let isLoopRunning = false;
+
+    const startLoop = () => {
+      if (!isLoopRunning) {
+        isLoopRunning = true;
+        animationFrameId = requestAnimationFrame(loop);
+      }
+    };
 
     const onPointerMove = (e: PointerEvent) => {
+      // 1. Strictly ignore touch pointer events and non-mouse pointers
+      if (e.pointerType !== 'mouse') {
+        return;
+      }
+
       targetX = e.clientX;
       targetY = e.clientY;
 
@@ -61,9 +75,10 @@ export const CustomCursor: React.FC = () => {
       if (dist > 2) {
         targetAngle = Math.atan2(dy, dx) * (180 / Math.PI);
         isMoving = true;
-        clearTimeout(moveTimeout);
+        if (moveTimeout) clearTimeout(moveTimeout);
         moveTimeout = setTimeout(() => {
           isMoving = false;
+          startLoop(); // Settle animation and fade arrow
         }, 150);
       }
 
@@ -73,7 +88,12 @@ export const CustomCursor: React.FC = () => {
         isHoveringInteractive = Boolean(
           target.closest('a, button, input, textarea, select, [role="button"], label')
         );
+      } else {
+        isHoveringInteractive = false;
       }
+
+      // Start/continue the animation frame loop
+      startLoop();
     };
 
     const onPointerLeave = () => {
@@ -84,6 +104,7 @@ export const CustomCursor: React.FC = () => {
     const onPointerEnter = () => {
       isVisible = true;
       cursor.style.opacity = '1';
+      startLoop();
     };
 
     const loop = () => {
@@ -118,6 +139,27 @@ export const CustomCursor: React.FC = () => {
         dot.style.boxShadow = '0 0 10px rgba(217, 163, 35, 0.2)';
       }
 
+      // Check if settled: cursor has reached target, angle settled, and movement timeout finished
+      const distToTarget = Math.hypot(targetX - currentX, targetY - currentY);
+      const angleSettled = Math.abs(angleDiff) < 0.1;
+      const isSettled = distToTarget < 0.1 && angleSettled && !isMoving;
+
+      if (isSettled) {
+        // Snap exact coordinates to prevent micro-drifts
+        currentX = targetX;
+        currentY = targetY;
+        currentAngle = targetAngle;
+        cursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+        arrow.style.transform = `rotate(${currentAngle}deg)`;
+        arrow.style.opacity = '0';
+
+        // Stop requesting animation frames - go idle
+        isLoopRunning = false;
+        animationFrameId = null;
+        return;
+      }
+
+      // Continue animating until settled
       animationFrameId = requestAnimationFrame(loop);
     };
 
@@ -125,14 +167,18 @@ export const CustomCursor: React.FC = () => {
     document.addEventListener('mouseleave', onPointerLeave);
     document.addEventListener('mouseenter', onPointerEnter);
 
-    animationFrameId = requestAnimationFrame(loop);
+    // Loop is intentionally NOT started on mount. It remains idle until first mouse interaction.
 
     return () => {
       window.removeEventListener('pointermove', onPointerMove);
       document.removeEventListener('mouseleave', onPointerLeave);
       document.removeEventListener('mouseenter', onPointerEnter);
-      clearTimeout(moveTimeout);
-      cancelAnimationFrame(animationFrameId);
+      if (moveTimeout) clearTimeout(moveTimeout);
+      if (animationFrameId !== null) {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+      }
+      isLoopRunning = false;
     };
   }, []);
 
