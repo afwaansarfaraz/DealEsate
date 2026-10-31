@@ -1,0 +1,347 @@
+{
+  "timestamp": "2026-10-31T13:05:20.964Z",
+  "viewports": [
+    {
+      "name": "1920x1080",
+      "category": "desktop",
+      "width": 1920,
+      "height": 1080,
+      "overflow": {
+        "scrollWidth": 1920,
+        "innerWidth": 1920,
+        "hasOverflow": false,
+        "diff": 0
+      },
+      "heroScreenshot": "qa-reports/desktop/viewport_1920x1080_hero.png",
+      "fullScreenshot": "qa-reports/desktop/viewport_1920x1080_full.png",
+      "status": "PASS"
+    },
+    {
+      "name": "1600x900",
+      "category": "desktop",
+      "width": 1600,
+      "height": 900,
+      "overflow": {
+        "scrollWidth": 1600,
+        "innerWidth": 1600,
+        "hasOverflow": false,
+        "diff": 0
+      },
+      "heroScreenshot": "qa-reports/desktop/viewport_1600x900_hero.png",
+      "fullScreenshot": "qa-reports/desktop/viewport_1600x900_full.png",
+      "status": "PASS"
+    },
+    {
+      "name": "1440x900",
+      "category": "desktop",
+      "width": 1440,
+      "height": 900,
+      "overflow": {
+        "scrollWidth": 1440,
+        "innerWidth": 1440,
+        "hasOverflow": false,
+        "diff": 0
+      },
+      "heroScreenshot": "qa-reports/desktop/viewport_1440x900_hero.png",
+      "fullScreenshot": "qa-reports/desktop/viewport_1440x900_full.png",
+      "status": "PASS"
+    },
+    {
+      "name": "1366x768",
+      "category": "desktop",
+      "width": 1366,
+      "height": 768,
+      "overflow": {
+        "scrollWidth": 1366,
+        "innerWidth": 1366,
+        "hasOverflow": false,
+        "diff": 0
+      },
+      "heroScreenshot": "qa-reports/desktop/viewport_1366x768_hero.png",
+      "fullScreenshot": "qa-reports/desktop/viewport_1366x768_full.png",
+      "status": "PASS"
+    },
+    {
+      "name": "1280x800",
+      "category": "desktop",
+      "width": 1280,
+      "height": 800,
+      "overflow": {
+        "scrollWidth": 1280,
+        "innerWidth": 1280,
+        "hasOverflow": false,
+        "diff": 0
+      },
+      "heroScreenshot": "qa-reports/desktop/viewport_1280x800_hero.png",
+      "fullScreenshot": "qa-reports/desktop/viewport_1280x800_full.png",
+      "status": "PASS"
+    },
+    {
+      "name": "1024x768",
+      "category": "desktop",
+      "width": 1024,
+      "height": 768,
+      "overflow": {
+        "scrollWidth": 1024,
+        "innerWidth": 1024,
+        "hasOverflow": false,
+        "diff": 0
+      },
+      "heroScreenshot": "qa-reports/desktop/viewport_1024x768_hero.png",
+      "fullScreenshot": "qa-reports/desktop/viewport_1024x768_full.png",
+      "status": "PASS"
+    },
+    {
+      "name": "768x1024",
+      "category": "tablet",
+      "width": 768,
+      "height": 1024,
+      "overflow": {
+        "scrollWidth": 768,
+        "innerWidth": 768,
+        "hasOverflow": false,
+        "diff": 0
+      },
+      "heroScreenshot": "qa-reports/tablet/viewport_768x1024_hero.png",
+      "fullScreenshot": "qa-reports/tablet/viewport_768x1024_full.png",
+      "status": "PASS"
+    },
+    {
+      "name": "820x1180",
+      "category": "tablet",
+      "width": 820,
+      "height": 1180,
+      "overflow": {
+        "scrollWidth": 820,
+        "innerWidth": 820,
+        "hasOverflow": false,
+        "diff": 0
+      },
+      "heroScreenshot": "qa-reports/tablet/viewport_820x1180_hero.png",
+      "fullScreenshot": "qa-reports/tablet/viewport_820x1180_full.png",
+      "status": "PASS"
+    },
+    {
+      "name": "430x932",
+      "category": "mobile",
+      "width": 430,
+      "height": 932,
+      "overflow": {
+        "scrollWidth": 430,
+        "innerWidth": 430,
+        "hasOverflow": false,
+        "diff": 0
+      },
+      "heroScreenshot": "qa-reports/mobile/viewport_430x932_hero.png",
+      "fullScreenshot": "qa-reports/mobile/viewport_430x932_full.png",
+      "status": "PASS"
+    },
+    {
+      "name": "414x896",
+      "category": "mobile",
+      "width": 414,
+      "height": 896,
+      "overflow": {
+        "scrollWidth": 414,
+        "innerWidth": 414,
+        "hasOverflow": false,
+        "diff": 0
+      },
+      "heroScreenshot": "qa-reports/mobile/viewport_414x896_hero.png",
+      "fullScreenshot": "qa-reports/mobile/viewport_414x896_full.png",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844",
+      "category": "mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": {
+        "scrollWidth": 390,
+        "innerWidth": 390,
+        "hasOverflow": false,
+        "diff": 0
+      },
+      "heroScreenshot": "qa-reports/mobile/viewport_390x844_hero.png",
+      "fullScreenshot": "qa-reports/mobile/viewport_390x844_full.png",
+      "status": "PASS"
+    },
+    {
+      "name": "375x812",
+      "category": "mobile",
+      "width": 375,
+      "height": 812,
+      "overflow": {
+        "scrollWidth": 375,
+        "innerWidth": 375,
+        "hasOverflow": false,
+        "diff": 0
+      },
+      "heroScreenshot": "qa-reports/mobile/viewport_375x812_hero.png",
+      "fullScreenshot": "qa-reports/mobile/viewport_375x812_full.png",
+      "status": "PASS"
+    },
+    {
+      "name": "360x800",
+      "category": "mobile",
+      "width": 360,
+      "height": 800,
+      "overflow": {
+        "scrollWidth": 360,
+        "innerWidth": 360,
+        "hasOverflow": false,
+        "diff": 0
+      },
+      "heroScreenshot": "qa-reports/mobile/viewport_360x800_hero.png",
+      "fullScreenshot": "qa-reports/mobile/viewport_360x800_full.png",
+      "status": "PASS"
+    },
+    {
+      "name": "320x740",
+      "category": "mobile",
+      "width": 320,
+      "height": 740,
+      "overflow": {
+        "scrollWidth": 320,
+        "innerWidth": 320,
+        "hasOverflow": false,
+        "diff": 0
+      },
+      "heroScreenshot": "qa-reports/mobile/viewport_320x740_hero.png",
+      "fullScreenshot": "qa-reports/mobile/viewport_320x740_full.png",
+      "status": "PASS"
+    }
+  ],
+  "sections": [
+    {
+      "id": "header",
+      "selector": "header",
+      "file": "qa-reports/sections/01_navbar.png",
+      "status": "PASS"
+    },
+    {
+      "id": "hero",
+      "selector": "section#hero",
+      "status": "NOT_FOUND"
+    },
+    {
+      "id": "screening-desk",
+      "selector": "#hero .bg-navy-950\\/80",
+      "status": "NOT_FOUND"
+    },
+    {
+      "id": "owner-leads",
+      "selector": "section#owner-leads",
+      "file": "qa-reports/sections/04_owner_leads.png",
+      "status": "PASS"
+    },
+    {
+      "id": "human-support",
+      "selector": "section#human-support",
+      "file": "qa-reports/sections/05_human_support.png",
+      "status": "PASS"
+    },
+    {
+      "id": "solutions",
+      "selector": "section#solutions",
+      "file": "qa-reports/sections/06_solutions.png",
+      "status": "PASS"
+    },
+    {
+      "id": "how-it-works",
+      "selector": "section#how-it-works",
+      "file": "qa-reports/sections/07_how_it_works.png",
+      "status": "PASS"
+    },
+    {
+      "id": "who-we-serve",
+      "selector": "section#who-we-serve",
+      "status": "NOT_FOUND"
+    },
+    {
+      "id": "why-dealestate",
+      "selector": "section#why-dealestate",
+      "file": "qa-reports/sections/09_why_dealestate.png",
+      "status": "PASS"
+    },
+    {
+      "id": "faq",
+      "selector": "section#faq",
+      "file": "qa-reports/sections/10_faq.png",
+      "status": "PASS"
+    },
+    {
+      "id": "contact",
+      "selector": "section#contact",
+      "file": "qa-reports/sections/11_contact_section.png",
+      "status": "PASS"
+    },
+    {
+      "id": "contact-form",
+      "selector": "section#contact form",
+      "file": "qa-reports/sections/12_contact_form.png",
+      "status": "PASS"
+    },
+    {
+      "id": "footer",
+      "selector": "footer",
+      "file": "qa-reports/sections/13_footer.png",
+      "status": "PASS"
+    }
+  ],
+  "interactions": [
+    {
+      "test": "FAQ Item 1 Expansion",
+      "result": "PASS",
+      "screenshot": "qa-reports/interactions/faq_first_item_expanded.png"
+    },
+    {
+      "test": "FAQ Item 2 Expansion",
+      "result": "PASS",
+      "screenshot": "qa-reports/interactions/faq_second_item_expanded.png"
+    }
+  ],
+  "formTests": {
+    "emptySubmission": {
+      "errorsRendered": [
+        "Full Name is required.",
+        "Business or Agency Name is required.",
+        "Phone number is required.",
+        "Email address is required.",
+        "Preferred city or micro-market location is required."
+      ],
+      "hasRequiredErrors": true,
+      "screenshot": "qa-reports/interactions/form_validation_errors.png",
+      "status": "PASS"
+    },
+    "invalidFormats": {
+      "phoneValidation": "Please enter a valid phone number (at least 10 digits).",
+      "emailValidation": "Please enter a valid email address.",
+      "status": "PASS"
+    },
+    "validSubmission": {
+      "buttonLoadingText": "Submitting Inquiry...",
+      "outcome": {
+        "successHeading": "Request an Initial Locality Allocation",
+        "successMsg": "Speak with our team to explore verified owner leads and dedicated human sales support tailored to your micro-market.",
+        "errorMsg": "This form needs Activation. We've sent you an email containing an 'Activate Form' link. Just click it and your form will be actived!Instant Assistance: Call: +91 63946 23162 WhatsApp Desk"
+      },
+      "screenshot": "qa-reports/interactions/form_submission_outcome.png",
+      "status": "PASS"
+    }
+  },
+  "consoleErrors": [],
+  "failedRequests": [],
+  "performance": {
+    "ttfb": 3,
+    "domContentLoaded": 26,
+    "loadTime": 27,
+    "fcp": 124,
+    "transferSize": 300
+  },
+  "contrastAudit": {
+    "totalSampled": 68,
+    "passed": 59,
+    "passRate": 87
+  }
+}
