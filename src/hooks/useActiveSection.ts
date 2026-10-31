@@ -36,3 +36,4 @@ export function useActiveSection(sectionIds: string[], offsetPx: number = 100): 
 
   return activeSection;
 }
+

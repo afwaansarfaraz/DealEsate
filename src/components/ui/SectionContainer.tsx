@@ -42,3 +42,4 @@ export const SectionContainer: React.FC<SectionContainerProps> = ({
     </Component>
   );
 };
+

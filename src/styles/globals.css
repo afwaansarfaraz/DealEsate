@@ -40,17 +40,27 @@
 @layer utilities {
   /* Subtle glass card style */
   .glass-card {
-    background: rgba(22, 29, 43, 0.75);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(14, 21, 34, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  /* Gold gradient text */
+  /* Gold gradient text with luminous clarity and drop shadow */
   .gold-gradient-text {
-    background: linear-gradient(135deg, #F3E5AB 0%, #D4A017 50%, #B88910 100%);
+    background: linear-gradient(135deg, #FFF3C4 0%, #F5C542 45%, #D4A017 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.9));
+  }
+
+  /* Premium text shadow for hero readability over photography */
+  .text-shadow-hero {
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.95), 0 0 32px rgba(5, 13, 29, 0.85);
+  }
+
+  .text-shadow-subtle {
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9);
   }
 }
 

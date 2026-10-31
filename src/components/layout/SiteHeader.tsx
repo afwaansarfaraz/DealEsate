@@ -13,14 +13,14 @@ export const SiteHeader: React.FC = () => {
   return (
     <>
       <header
-        className="sticky top-0 z-40 w-full bg-navy-950/90 backdrop-blur-md border-b border-white/10 transition-all duration-200"
+        className="sticky top-0 z-40 w-full bg-navy-950/92 backdrop-blur-md border-b border-white/[0.08] transition-all duration-200"
         role="banner"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-[72px] flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-[70px] flex items-center justify-between gap-4">
           {/* Brand Logo */}
           <a
             href="#top"
-            className="flex items-center gap-3 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-md p-1"
+            className="flex items-center gap-3 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-md p-1 group"
             aria-label="Dealestate - Back to top"
           >
             <img
@@ -28,7 +28,7 @@ export const SiteHeader: React.FC = () => {
               alt="Dealestate Logo"
               width={160}
               height={42}
-              className="h-8 sm:h-10 w-auto object-contain"
+              className="h-8 sm:h-9 w-auto object-contain transition-opacity duration-200 group-hover:opacity-95"
               onError={(e) => {
                 (e.target as HTMLImageElement).src = '/assets/brand/dealestate-logo.png';
               }}
@@ -36,17 +36,17 @@ export const SiteHeader: React.FC = () => {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main Navigation">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7" aria-label="Main Navigation">
             {primaryNavItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
                 <a
                   key={item.id}
                   href={item.href}
-                  className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
+                  className={`text-[13px] xl:text-sm font-medium tracking-wide transition-colors py-1 ${
                     isActive
-                      ? 'text-gold-light bg-gold/10 font-semibold'
-                      : 'text-text-secondary hover:text-text-primary hover:bg-white/5'
+                      ? 'text-gold-light font-semibold'
+                      : 'text-slate-300 hover:text-white'
                   }`}
                 >
                   {item.label}
@@ -72,7 +72,7 @@ export const SiteHeader: React.FC = () => {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              className="p-2.5 rounded-lg text-text-secondary hover:text-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+              className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
               aria-label="Open navigation menu"
               aria-expanded={mobileMenuOpen}
             >

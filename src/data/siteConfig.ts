@@ -56,3 +56,4 @@ export const hasEmailContact = (config: SiteConfig = siteConfig): boolean =>
 
 export const hasSocialLinks = (config: SiteConfig = siteConfig): boolean =>
   Object.values(config.social).some((url) => Boolean(url && url.trim().length > 0));
+

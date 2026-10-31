@@ -7,7 +7,7 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[92vh] sm:min-h-screen flex flex-col justify-between pt-8 sm:pt-14 pb-12 sm:pb-20 overflow-hidden"
+      className="relative min-h-[90vh] sm:min-h-screen flex flex-col justify-between pt-6 sm:pt-10 pb-12 sm:pb-16 overflow-hidden"
       aria-label="Hero - Dealestate Growth System"
     >
       {/* Background Skyline Image with Responsive Picture element */}
@@ -40,51 +40,51 @@ export const HeroSection: React.FC = () => {
           {/* Fallback Image */}
           <img
             src="/assets/hero/mumbai-skyline-desktop.jpg"
-            alt="Mumbai Skyline at Dusk"
+            alt="Mumbai Skyline at Dusk with Bandra-Worli Sea Link"
             width={1774}
             height={887}
             fetchPriority="high"
             decoding="async"
-            className="w-full h-full object-cover object-[center_25%] sm:object-[center_35%] scale-105 transition-transform duration-1000"
+            className="w-full h-full object-cover object-[center_30%] sm:object-[center_28%]"
           />
         </picture>
 
-        {/* Sophisticated Multi-Layer Overlay Gradient */}
-        {/* Layer 1: Dark Navy fade at top for navbar readability, clearing over skyline, then deep navy at bottom */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/90 via-navy-950/60 to-dark-bg/95" />
+        {/* Refined, Minimal Overlay System: Preserves Sunset Colors & Skyline Architecture */}
+        {/* Layer 1: Top vignette for navbar integration */}
+        <div className="absolute top-0 inset-x-0 h-36 bg-gradient-to-b from-navy-950/85 via-navy-950/30 to-transparent" />
 
-        {/* Layer 2: Subtle radial vignette */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-navy-950/30 to-navy-950/80" />
+        {/* Layer 2: Targeted soft radial vignette behind text - keeps sunset and bridge 100% luminous */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_35%,rgba(7,21,46,0.68)_0%,rgba(7,21,46,0.28)_55%,transparent_100%)]" />
 
-        {/* Layer 3: Warm gold dusk reflection */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-navy-950/70 via-transparent to-gold/5 pointer-events-none" />
+        {/* Layer 3: Bottom gradient transition into dark background */}
+        <div className="absolute bottom-0 inset-x-0 h-44 sm:h-60 bg-gradient-to-t from-dark-bg via-dark-bg/85 to-transparent" />
       </div>
 
       {/* Main Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-center items-center text-center">
         {/* Eyebrow Tag */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase text-gold-light bg-gold/10 border border-gold/30 mb-5 sm:mb-6 shadow-sm">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold tracking-wider uppercase text-gold-light bg-navy-950/75 backdrop-blur-md border border-gold/40 mb-3.5 sm:mb-4.5 shadow-[0_2px_12px_rgba(0,0,0,0.4)]">
           <Sparkles className="w-3.5 h-3.5 text-gold shrink-0 animate-pulse" />
           <span>India’s Human-Led, AI-Powered Real Estate Growth System</span>
         </div>
 
-        {/* Main H1 Headline */}
-        <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.12] max-w-4xl">
+        {/* Refined H1 Headline: Balanced Size, Confident 2-Line Editorial Rhythm */}
+        <h1 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold tracking-tight text-white leading-[1.18] sm:leading-[1.15] max-w-3xl mb-3.5 sm:mb-4 drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)]">
           More Than Leads.{' '}
-          <span className="block mt-1 sm:mt-2 gold-gradient-text">
+          <span className="block mt-1 sm:mt-1.5 gold-gradient-text">
             A Complete Growth System.
           </span>
         </h1>
 
         {/* Subhead Value Proposition */}
-        <p className="mt-5 sm:mt-7 text-sm sm:text-lg md:text-xl text-text-secondary max-w-2xl font-normal leading-relaxed">
+        <p className="mb-6 sm:mb-7 text-sm sm:text-base md:text-lg text-slate-100/95 max-w-2xl font-normal leading-relaxed text-shadow-subtle">
           Get relevant property-owner leads, dedicated human sales support, and
           AI-powered tools designed to help brokers and agencies close deals with
           confidence.
         </p>
 
         {/* Dual Primary & Secondary CTAs */}
-        <div className="mt-7 sm:mt-9 flex flex-col xs:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full max-w-md xs:max-w-none">
+        <div className="mb-6 sm:mb-8 flex flex-col xs:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-md xs:max-w-none">
           <Button
             href="#owner-leads"
             variant="primary"
@@ -105,17 +105,17 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* Core Value Pillars Strip */}
-        <div className="mt-8 sm:mt-11 flex flex-wrap items-center justify-center gap-y-2 gap-x-4 sm:gap-x-8 text-xs sm:text-sm text-text-secondary">
+        <div className="mb-8 sm:mb-10 flex flex-wrap items-center justify-center gap-y-2 gap-x-4 sm:gap-x-7 text-xs sm:text-sm text-slate-200 font-medium text-shadow-subtle">
           <div className="flex items-center gap-1.5">
             <CheckCircle className="w-4 h-4 text-gold shrink-0" />
             <span>Rental, Resale &amp; Commercial Leads</span>
           </div>
-          <div className="hidden sm:block text-white/20">•</div>
+          <div className="hidden sm:block text-white/30">•</div>
           <div className="flex items-center gap-1.5">
             <Users className="w-4 h-4 text-gold shrink-0" />
             <span>Dedicated Human Sales Support</span>
           </div>
-          <div className="hidden sm:block text-white/20">•</div>
+          <div className="hidden sm:block text-white/30">•</div>
           <div className="flex items-center gap-1.5">
             <ShieldCheck className="w-4 h-4 text-gold shrink-0" />
             <span>Exclusive Single-Broker Allocation</span>

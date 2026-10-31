@@ -16,3 +16,4 @@ export const headerCTAItem: NavigationItem = {
   href: '#owner-leads',
   isCTA: true,
 };
+

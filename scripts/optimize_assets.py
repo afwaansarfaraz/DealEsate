@@ -55,20 +55,18 @@ def main():
         orig_hero_path = 'public/assets/hero/mumbai-skyline-original.png'
         skyline.save(orig_hero_path)
 
-        # Desktop WebP & JPG (target <= 350KB)
+        # Desktop WebP & JPG (Full resolution 1774 x 887, high quality)
         desktop_webp = 'public/assets/hero/mumbai-skyline-desktop.webp'
         desktop_jpg = 'public/assets/hero/mumbai-skyline-desktop.jpg'
-        skyline.save(desktop_webp, 'WEBP', quality=84, method=6)
-        skyline.save(desktop_jpg, 'JPEG', quality=85, optimize=True)
+        skyline.save(desktop_webp, 'WEBP', quality=86, method=6)
+        skyline.save(desktop_jpg, 'JPEG', quality=88, optimize=True)
 
-        # Mobile portrait crop (target <= 220KB) - centered on dramatic illuminated towers
-        w, h = skyline.size
-        crop_portrait = skyline.crop((450, 0, 1350, h))
-        crop_mobile_resized = crop_portrait.resize((720, 800), Image.Resampling.LANCZOS)
+        # Mobile panorama (1200 x 600, preserving wide sunset horizon and towers)
+        mobile_pano = skyline.resize((1200, 600), Image.Resampling.LANCZOS)
         mobile_webp = 'public/assets/hero/mumbai-skyline-mobile.webp'
         mobile_jpg = 'public/assets/hero/mumbai-skyline-mobile.jpg'
-        crop_mobile_resized.save(mobile_webp, 'WEBP', quality=82, method=6)
-        crop_mobile_resized.save(mobile_jpg, 'JPEG', quality=84, optimize=True)
+        mobile_pano.save(mobile_webp, 'WEBP', quality=84, method=6)
+        mobile_pano.save(mobile_jpg, 'JPEG', quality=86, optimize=True)
 
     print("=== ASSET OPTIMIZATION RESULTS ===")
     print(f"Original Hero (PNG): {os.path.getsize(orig_hero_path)/1024:.1f} KB")

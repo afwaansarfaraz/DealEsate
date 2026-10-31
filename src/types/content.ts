@@ -39,3 +39,4 @@ export interface TrustPillar {
   description: string;
   iconName: string;
 }
+
