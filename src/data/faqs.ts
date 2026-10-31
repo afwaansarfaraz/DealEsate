@@ -6,54 +6,53 @@ export interface FAQItem {
 
 export const faqsData: FAQItem[] = [
   {
-    question: 'What is Dealestate?',
+    question: 'What types of leads does Dealestate provide?',
     answer:
-      'Dealestate is India’s first human-led, AI-powered real estate growth system. We provide Indian brokers, independent agents, and agencies with verified property-owner leads (Rental, Resale, Commercial) paired with dedicated human sales support and AI-assisted workflow tools to accelerate deal closures.',
+      'Dealestate specializes exclusively in direct property-owner leads. We do not generate, position, or sell buyer-lead packs. Every lead connects you directly with a property owner seeking to rent, sell, or lease residential or commercial real estate.',
   },
   {
-    question: 'What types of owner leads do you provide?',
+    question: 'Are the leads rental, resale or commercial owner leads?',
     answer:
-      'We specialize exclusively in direct property-owner leads across three primary categories: Rental Owner Leads (landlords looking for tenants), Resale Owner Leads (property sellers looking for buyers), and Commercial Owner Leads (owners of office spaces, retail outlets, and commercial floors). We do not position buyer leads as a core service.',
+      'We provide all three distinct owner lead categories: Rental Owner Leads (landlords seeking tenants), Resale Owner Leads (homeowners looking to sell), and Commercial Owner Leads (owners of retail spaces, offices, and commercial properties). You can select specific categories or combine them based on your brokerage focus.',
   },
   {
-    question: 'Where do owner leads come from?',
+    question: 'How are leads sourced?',
     answer:
-      'Leads are sourced from public real estate portals (such as Magicbricks, 99acres), verified partner databases, and independent marketing channels across target micro-markets. We do not claim an exclusive official partnership with third-party portals; rather, we aggregate, screen, and audit public listings to filter genuine owners from agent reposts.',
+      'Leads are identified from public property listing portals, independent partner data feeds, and local digital marketing funnels across target micro-markets. We do not claim official corporate partnerships with external portals; rather, we aggregate, filter, and audit public listings to isolate genuine property owners from agent reposts.',
   },
   {
-    question: 'How does the verification process work?',
+    question: 'How does lead screening work?',
     answer:
-      'We utilize a dual-layer verification protocol. First, AI-assisted screening flags duplicate phone numbers, suspicious posting patterns, and mismatched property details. Second, our human review team inspects the listing details and initiates contact checks to confirm genuine intent before allocating the lead to your account.',
+      'We use a rigorous dual-layer screening process. First, AI-assisted screening flags duplicate phone numbers, detects recycled listings, and checks parameter consistency. Second, our human operations team reviews listing details and performs preliminary verification checks to confirm active owner intent before clearing the record.',
   },
   {
-    question: 'Are leads exclusive to my brokerage?',
+    question: 'Are leads shared with multiple brokers?',
     answer:
-      'Yes. Dealestate operates on a strict single-client allocation model (1 Client : 1 Lead). Once an owner lead is assigned to your account, it is not sold or distributed to competing brokers in the same locality.',
+      'No. Dealestate operates on a strict single-broker exclusivity model (1 Client : 1 Lead) under our agreed allocation terms. Once an owner lead is assigned to your account, it is locked and never resold or distributed to competing brokers in your designated territory.',
   },
   {
-    question: 'How is lead pricing determined?',
+    question: 'Does Dealestate provide human sales support?',
     answer:
-      'Pricing begins at a baseline reference of ₹100 per lead, and varies depending on property category (Rental vs. Commercial), micro-market location, delivery volume, and the specific level of human sales support bundled with your plan. Exact pricing terms are agreed transparently upon onboarding.',
+      'Yes. Dedicated human sales support is a cornerstone of our service. Our trained real estate callers assist with preliminary owner outreach, polite discovery calls, and follow-up management under agreed terms—acting as an operational extension of your brokerage to free your agents for property inspections.',
   },
   {
-    question: 'What happens if a contact number is invalid or disconnected?',
+    question: 'Does Dealestate guarantee property sales or rentals?',
     answer:
-      'While our multi-step screening filters out the vast majority of dead numbers, occasional line disconnections occur in real-time. Any uncontactable or fraudulent number reported within the agreed replacement window is audited by our operations team and replaced according to our operational replacement policy.',
+      'No. Dealestate provides verified owner opportunities and operational sales support; we never guarantee closed sales, rental agreements, or fixed conversion rates. Closing deals depends on realistic market pricing, property condition, your local negotiation skill, and timely client follow-up.',
   },
   {
-    question: 'What does dedicated human sales support include?',
+    question: 'Can I request leads for a specific location?',
     answer:
-      'Our trained real estate specialists assist your team with agreed outreach workflows—including initial landlord discovery calls, basic property detail confirmations, polite follow-ups, and calendar coordination. The exact support scope, channels, and coverage hours are customized to your agency requirements.',
+      'Yes. Allocations are tailored to your chosen micro-markets, specific pin codes, and property categories. During onboarding, we evaluate current owner activity in your target sub-localities to establish a consistent delivery schedule.',
   },
   {
-    question: 'Does Dealestate conduct property site visits?',
+    question: 'Are CRM and WhatsApp automation included?',
     answer:
-      'No. Dealestate does not conduct physical property inspections or site visits. Your own team of licensed brokers and agents conducts all in-person site visits, client presentations, title verifications, and final lease/deed negotiations.',
+      'CRM pipeline management and consent-based WhatsApp automation workflows are available within our growth solution suite. Depending on your onboarding plan and operational requirements, these tools can be configured as part of your system package or paired with custom sales support.',
   },
   {
-    question: 'Does Dealestate guarantee closed sales or rental commissions?',
+    question: 'How can I get started?',
     answer:
-      'No. Dealestate provides verified owner opportunities and operational sales support; we never guarantee a closed sale, rental commission, or specific conversion rate. Final deal outcomes depend on market pricing, property condition, your local negotiation expertise, and rapid client follow-up.',
+      'Getting started is straightforward. Submit your details through the contact form below, indicating your target location and preferred lead categories. An onboarding specialist will contact you to review locality availability, discuss support requirements, and establish your dedicated allocation.',
   },
 ];
-

@@ -10,58 +10,57 @@ export const processSteps: ProcessStep[] = [
   {
     step: 1,
     title: 'Source',
-    tagline: 'Multi-Portal Discovery',
+    tagline: 'Identify Relevant Listings',
     description:
-      'Continuous identification of new owner listings across premier Indian property platforms and verified partner feeds.',
-    keyAction: 'System scans and aggregates raw listings across target pin codes.',
+      'Continuous discovery of new property-owner listings across major property portals and verified market feeds.',
+    keyAction: 'Identifies raw owner listings across target geographic locations.',
   },
   {
     step: 2,
     title: 'Filter',
-    tagline: 'Criteria & Micro-Market Rules',
+    tagline: 'Apply Agreed Criteria',
     description:
-      'Rigorous application of client-specific parameters: property category, budget range, and preferred sub-localities.',
-    keyAction: 'Eliminates irrelevant or out-of-scope opportunities automatically.',
+      'Systematic application of agreed parameters: property category (Rental, Resale, Commercial), price brackets, and micro-market pin codes.',
+    keyAction: 'Filters out listings that do not match your exact client profile.',
   },
   {
     step: 3,
-    title: 'Review',
-    tagline: 'Deep Listing Inspection',
+    title: 'Screen',
+    tagline: 'AI-Assisted Screening',
     description:
-      'Systematic examination of listing details, contact credentials, and property specs for authenticity and internal consistency.',
-    keyAction: 'Flags duplicate phone numbers, broker reposts, and suspicious records.',
+      'Algorithmic screening evaluates listing consistency, flags duplicate numbers, and checks available listing information.',
+    keyAction: 'Removes repetitive portal entries and flags suspicious contact patterns.',
   },
   {
     step: 4,
-    title: 'Verify',
-    tagline: 'AI Screening + Human Cross-Check',
+    title: 'Review',
+    tagline: 'Human Lead Inspection',
     description:
-      'Dual-layer verification combining AI anomaly detection with human specialist review to confirm active owner intent.',
-    keyAction: 'Only records that pass both algorithmic and human audits advance.',
+      'Trained operations specialists review relevant lead details, confirming active owner intent before clearing the record.',
+    keyAction: 'Human judgment ensures the listing meets operational quality standards.',
   },
   {
     step: 5,
     title: 'Allocate',
-    tagline: 'Strict 1 Client : 1 Lead Model',
+    tagline: 'Exclusive Assignment Model',
     description:
-      'Single-client exclusivity assignment. Leads are never shared or resold among multiple competing brokers in the same locality.',
-    keyAction: 'Lead lock is initiated—dedicated exclusively to your account.',
+      'Assigns the lead strictly according to the agreed allocation model (1 Client : 1 Lead exclusivity in your micro-market).',
+    keyAction: 'Locks the opportunity exclusively to your brokerage account.',
   },
   {
     step: 6,
     title: 'Deliver',
-    tagline: 'Direct Dispatch to Your Workflow',
+    tagline: 'Direct Dispatch to You',
     description:
-      'Instant delivery through your agreed channel—direct WhatsApp alert, structured email dispatch, or shared CRM feed.',
-    keyAction: 'Rich lead briefing dispatched with owner name, contact, and property highlights.',
+      'Shares the complete lead record with owner details and property highlights via your agreed delivery channel.',
+    keyAction: 'Instant delivery via WhatsApp alert, email summary, or CRM feed.',
   },
   {
     step: 7,
     title: 'Track',
-    tagline: 'Feedback & Continuous Calibration',
+    tagline: 'Follow-Up & Outcome Monitoring',
     description:
-      'Weekly outcome logging and regular feedback syncs to refine filtering rules and maximize your conversion velocity.',
-    keyAction: 'Delivery criteria dynamically updated based on your conversion notes.',
+      'Monitors delivery status and available follow-up outcomes to calibrate filtering criteria and ensure ongoing quality.',
+    keyAction: 'Ongoing feedback loop to refine future lead matches.',
   },
 ];
-

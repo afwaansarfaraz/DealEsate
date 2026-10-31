@@ -18,6 +18,9 @@ export const Accordion: React.FC<AccordionProps> = ({ items, className }) => {
     <div className={`space-y-3.5 max-w-3xl mx-auto ${className || ''}`}>
       {items.map((item, index) => {
         const isOpen = openIndex === index;
+        const buttonId = `faq-trigger-${index}`;
+        const panelId = `faq-content-${index}`;
+
         return (
           <div
             key={index}
@@ -28,9 +31,11 @@ export const Accordion: React.FC<AccordionProps> = ({ items, className }) => {
             }`}
           >
             <button
+              id={buttonId}
               type="button"
               onClick={() => toggle(index)}
               aria-expanded={isOpen}
+              aria-controls={panelId}
               className="w-full px-5 py-4 sm:px-6 sm:py-5 flex items-center justify-between text-left gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-xl select-none"
             >
               <span className="text-base sm:text-lg font-semibold text-navy-900 leading-snug">
@@ -40,13 +45,19 @@ export const Accordion: React.FC<AccordionProps> = ({ items, className }) => {
                 className={`p-1.5 rounded-full shrink-0 transition-transform duration-200 ${
                   isOpen ? 'bg-gold/15 text-gold-deep rotate-180' : 'bg-slate-100 text-slate-500'
                 }`}
+                aria-hidden="true"
               >
                 <ChevronDown className="w-4 h-4" />
               </span>
             </button>
 
             {isOpen && (
-              <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 mt-1">
+              <div
+                id={panelId}
+                role="region"
+                aria-labelledby={buttonId}
+                className="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 mt-1"
+              >
                 <p className="pt-3">{item.answer}</p>
               </div>
             )}
@@ -56,4 +67,3 @@ export const Accordion: React.FC<AccordionProps> = ({ items, className }) => {
     </div>
   );
 };
-

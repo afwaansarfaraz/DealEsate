@@ -7,6 +7,7 @@ export interface OwnerLeadCategory {
   idealFor: string;
   features: string[];
   icon: string;
+  ctaText: string;
 }
 
 export const ownerLeadCategories: OwnerLeadCategory[] = [
@@ -14,49 +15,51 @@ export const ownerLeadCategories: OwnerLeadCategory[] = [
     id: 'rental-owner',
     title: 'Rental Owner Leads',
     badge: 'Rental Portfolio',
-    tagline: 'Connect Directly with Rent-Seeking Property Owners',
+    tagline: 'High-Intent Landlords Seeking Reliable Tenants',
     description:
-      'Direct contact opportunities with residential and commercial landlords seeking quality tenants for apartments, standalone floors, and retail spaces.',
-    idealFor: 'Rental specialists, leasing consultants, and residential agencies.',
+      'Connect brokers directly with property owners looking to rent out residential apartments, standalone floors, and boutique retail spaces.',
+    idealFor: 'Leasing specialists, rental brokers, and residential agency teams.',
     features: [
       'Screened direct landlord contact details',
-      'Rent expected, property configurations and deposit terms',
+      'Property specifications, expected rent, and deposit terms verified',
       'Locality and property availability timing cross-referenced',
-      'Single-broker exclusivity on allocated leads',
+      'Single-broker allocation: never distributed to multiple agents',
     ],
     icon: 'Key',
+    ctaText: 'Get Rental Owner Leads',
   },
   {
     id: 'resale-owner',
     title: 'Resale Owner Leads',
     badge: 'Resale & Freehold',
-    tagline: 'High-Intent Property Sellers Across Top Micro-Markets',
+    tagline: 'Direct Property Sellers Across Prime Micro-Markets',
     description:
-      'Verified owner opportunities for residential resale properties—including high-rise apartments, independent duplex villas, and premium freehold plots.',
-    idealFor: 'Resale brokers, luxury realtors, and residential agency teams.',
+      'Connect brokers directly with property owners interested in selling their residential properties, high-rise apartments, and independent villas.',
+    idealFor: 'Resale specialists, luxury realtors, and independent agents.',
     features: [
-      'Genuine owner listings filtered from market duplicates',
-      'Property specifications, floor plans, and seller intent confirmed',
-      'Locality screening focused on prime growth corridors',
-      'Dedicated follow-up support by our human specialist team',
+      'Genuine owner listings filtered from market reposts',
+      'Seller timeline, expected price band, and property specs confirmed',
+      'High-demand focus corridors and prime micro-markets',
+      'Human specialist assistance for preliminary discovery outreach',
     ],
     icon: 'Home',
+    ctaText: 'Get Resale Owner Leads',
   },
   {
     id: 'commercial-owner',
     title: 'Commercial Owner Leads',
     badge: 'Commercial & Retail',
-    tagline: 'Prime Office, Retail & Industrial Space Owners',
+    tagline: 'High-Ticket Office, Retail & Industrial Spaces',
     description:
-      'Verified listings from owners and authorized representatives of bare-shell office floors, SCO plots, retail outlets, and warehouse spaces.',
+      'Connect commercial real-estate professionals directly with relevant property owners of bare-shell office floors, retail showrooms, and warehouses.',
     idealFor: 'Commercial property consultants, corporate leasing teams, and institutional brokers.',
     features: [
-      'Direct owner or primary asset manager verification',
-      'Carpet area, furnishing status, power load, and frontage details',
-      'High-ticket mandate opportunities with serious sellers/lessors',
-      'Strict 1 Client : 1 Lead exclusivity protocol',
+      'Direct landlord or authorized decision-maker contact confirmed',
+      'Carpet area, furnishing status, floor plate, and power load details',
+      'High-value mandates with serious commercial property owners',
+      'Strict 1 Client : 1 Lead exclusivity model',
     ],
     icon: 'Building2',
+    ctaText: 'Get Commercial Owner Leads',
   },
 ];
-

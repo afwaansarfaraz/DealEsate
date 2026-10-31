@@ -1,44 +1,42 @@
 :root {
-  /* Brand Core Colors */
-  --color-navy: #0B1F44;
-  --color-navy-dark: #07152E;
-  --color-navy-deep: #050D1D;
-  --color-navy-surface: #0E224A;
+  /* Brand Core Colors - Updated Blueprint Palette */
+  --color-navy: #102B4E;
+  --color-navy-dark: #0D223E;
+  --color-navy-deep: #08172B;
+  --color-navy-surface: #14355E;
 
-  /* Gold Accent */
-  --color-gold: #D4A017;
-  --color-gold-hover: #B88910;
-  --color-gold-deep: #996B00;
-  --color-gold-light: #FFF3C4;
-  --color-gold-muted: #C28D27;
-  --color-gold-glow: rgba(212, 160, 23, 0.25);
+  /* Premium Gold Accent */
+  --color-gold: #D9A323;
+  --color-gold-hover: #BE8E1B;
+  --color-gold-deep: #A07510;
+  --color-gold-light: #FDF3D8;
+  --color-gold-glow: rgba(217, 163, 35, 0.25);
 
   /* Dominant Light Surfaces */
-  --color-surface-ivory: #FBF9F4;
-  --color-surface-ivory-warm: #F5F1E6;
+  --color-surface-ivory: #F7F3EA;
   --color-surface-white: #FFFFFF;
-  --color-border-light: rgba(15, 23, 42, 0.08);
+  --color-border-light: #E5E7EB;
 
   /* Soft Blue Alternate Surfaces */
-  --color-surface-soft-blue: #F0F4F8;
-  --color-surface-soft-blue-alt: #E6EEF6;
-  --color-border-soft-blue: #D6E2EE;
+  --color-surface-soft-blue: #EAF1F8;
+  --color-surface-soft-blue-alt: #DEEAF4;
+  --color-border-soft-blue: #CFE0EF;
 
   /* High-Impact Dark Surfaces */
-  --color-dark-bg: #07152E;
-  --color-dark-surface: #0B1F44;
-  --color-dark-card: #102652;
+  --color-dark-bg: #102B4E;
+  --color-dark-surface: #14355E;
+  --color-dark-card: #173D6C;
   --color-dark-border: rgba(255, 255, 255, 0.12);
 
   /* Typography Colors - Light Surfaces */
-  --color-text-navy: #07152E;
-  --color-text-charcoal: #0F172A;
+  --color-text-navy: #102B4E;
+  --color-text-charcoal: #172B4D;
   --color-text-body: #334155;
   --color-text-muted: #64748B;
 
   /* Typography Colors - Dark High-Impact Surfaces */
-  --color-text-dark-primary: #F8FAFC;
-  --color-text-dark-secondary: #CBD5E1;
+  --color-text-dark-primary: #FFFFFF;
+  --color-text-dark-secondary: #E2E8F0;
   --color-text-dark-muted: #94A3B8;
 
   /* Layout */

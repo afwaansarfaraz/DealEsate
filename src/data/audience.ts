@@ -10,14 +10,14 @@ export interface AudienceProfile {
 export const audienceProfiles: AudienceProfile[] = [
   {
     id: 'independent-brokers',
-    role: 'Independent Property Brokers',
+    role: 'Independent Real Estate Brokers',
     badge: 'Solo Agents & Consultants',
     challenge: 'Time wasted on cold-calling stale portal contacts instead of closing high-value deals.',
-    solution: 'Receive filtered, exclusive owner leads with human outreach support so you spend your hours conducting site visits.',
+    solution: 'Receive filtered, exclusive owner leads with dedicated human outreach support so you spend your hours conducting site visits.',
     benefits: [
-      'Steady pipeline of direct owners ready to converse',
-      'No bidding wars against dozens of competing agents',
-      'Human specialist assistance for follow-up discipline',
+      'Steady pipeline of direct owners ready to discuss representation',
+      'No bidding wars against dozens of competing agents in the same locality',
+      'Human specialist assistance for disciplined preliminary follow-ups',
     ],
   },
   {
@@ -27,9 +27,9 @@ export const audienceProfiles: AudienceProfile[] = [
     challenge: 'Inconsistent lead quality across agents leading to low morale and fragmented CRM tracking.',
     solution: 'Centralized lead allocation with categorized streams (Rental, Resale, Commercial) assigned to designated specialists.',
     benefits: [
-      'Predictable lead volume across target focus sectors',
+      'Predictable lead volume across target micro-market sectors',
       'Clean team accountability and transparent tracking',
-      'Option to integrate promotional video reels for your listings',
+      'Option to integrate promotional video reels for your verified listings',
     ],
   },
   {
@@ -40,9 +40,8 @@ export const audienceProfiles: AudienceProfile[] = [
     solution: 'Curated commercial landlord streams with confirmed square footage, furnishing status, and leasing criteria.',
     benefits: [
       'Access to prime retail and office spaces before public bidding',
-      'Direct landlord relationships that open recurring mandates',
+      'Direct landlord relationships that open recurring leasing mandates',
       'High average transaction ticket size with exclusive distribution',
     ],
   },
 ];
-

@@ -16,9 +16,9 @@ export const AudienceSection: React.FC = () => {
     <section id="audience" className="bg-soft-blue py-20 sm:py-28 border-t border-slate-200/70 relative">
       <SectionContainer>
         <SectionHeading
-          eyebrow="Target Audience"
-          title="Built Exclusively for Real-Estate Professionals"
-          subtitle="Whether you are a solo luxury agent or managing a 20-agent commercial team, Dealestate is tailored to your operational scale."
+          eyebrow="Who We Serve"
+          title="Built for Real Estate Professionals"
+          subtitle="Whether you are an independent luxury broker, a growing agency, or a specialized commercial consultant, Dealestate adapts to your operating scale."
           theme="light"
         />
 
@@ -29,11 +29,11 @@ export const AudienceSection: React.FC = () => {
             return (
               <div
                 key={item.id}
-                className="bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between shadow-card-light hover:shadow-card-hover transition-all duration-300"
+                className="bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between shadow-card-light hover:shadow-card-hover hover:border-gold/40 transition-all duration-300 group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
-                    <span className="p-3 rounded-xl bg-navy-900 text-white">
+                    <span className="p-3 rounded-xl bg-navy-900 text-white group-hover:bg-gold-deep transition-colors">
                       <IconComponent className="w-5 h-5" />
                     </span>
                     <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
@@ -45,19 +45,19 @@ export const AudienceSection: React.FC = () => {
                     {item.role}
                   </h3>
 
-                  <div className="p-3.5 rounded-xl bg-red-50/60 border border-red-100 text-xs text-red-900 mb-4">
-                    <span className="font-bold block mb-0.5">Common Bottleneck:</span>
+                  <div className="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200/70 text-xs text-amber-900 mb-4">
+                    <span className="font-bold block mb-0.5 text-amber-950">Common Operational Challenge:</span>
                     {item.challenge}
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-emerald-50/60 border border-emerald-100 text-xs text-emerald-900 mb-6">
-                    <span className="font-bold block mb-0.5">The Dealestate Impact:</span>
+                  <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200/70 text-xs text-emerald-900 mb-6">
+                    <span className="font-bold block mb-0.5 text-emerald-950">How Dealestate Helps:</span>
                     {item.solution}
                   </div>
 
                   <div className="space-y-2.5 pt-4 border-t border-slate-100 mb-6">
                     <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                      Key Advantages:
+                      Key Practical Benefits:
                     </p>
                     {item.benefits.map((b, idx) => (
                       <div key={idx} className="flex items-start gap-2 text-xs text-slate-700">
@@ -76,7 +76,7 @@ export const AudienceSection: React.FC = () => {
                   className="bg-white border-slate-300 text-navy-900 hover:bg-gold hover:text-navy-950 hover:border-gold"
                   iconRight={<ArrowRight className="w-4 h-4" />}
                 >
-                  Get Leads for Your Team
+                  Request Category Consultation
                 </Button>
               </div>
             );
@@ -86,4 +86,3 @@ export const AudienceSection: React.FC = () => {
     </section>
   );
 };
-
