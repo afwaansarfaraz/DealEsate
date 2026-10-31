@@ -13,7 +13,7 @@ export const SiteHeader: React.FC = () => {
   return (
     <>
       <header
-        className="sticky top-0 z-40 w-full bg-navy-950/92 backdrop-blur-md border-b border-white/[0.08] transition-all duration-200"
+        className="sticky top-0 z-40 w-full bg-[#07152E] backdrop-blur-md border-b border-white/10 transition-all duration-200 shadow-sm"
         role="banner"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-[70px] flex items-center justify-between gap-4">

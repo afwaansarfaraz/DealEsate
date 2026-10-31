@@ -1,32 +1,52 @@
 :root {
-  /* Brand Tokens */
+  /* Brand Core Colors */
   --color-navy: #0B1F44;
   --color-navy-dark: #07152E;
   --color-navy-deep: #050D1D;
+  --color-navy-surface: #0E224A;
+
+  /* Gold Accent */
   --color-gold: #D4A017;
   --color-gold-hover: #B88910;
-  --color-gold-light: #F3E5AB;
+  --color-gold-deep: #996B00;
+  --color-gold-light: #FFF3C4;
+  --color-gold-muted: #C28D27;
   --color-gold-glow: rgba(212, 160, 23, 0.25);
-  
-  /* Surfaces & Backgrounds */
-  --color-dark-bg: #0E1117;
-  --color-dark-surface: #141A24;
-  --color-dark-card: #161D2B;
-  --color-dark-border: rgba(255, 255, 255, 0.08);
-  --color-warm-surface: #F5F3E8;
 
-  /* Typography Colors */
-  --color-primary-text: #F8FAFC;
-  --color-secondary-text: #94A3B8;
-  --color-muted-text: #64748B;
+  /* Dominant Light Surfaces */
+  --color-surface-ivory: #FBF9F4;
+  --color-surface-ivory-warm: #F5F1E6;
+  --color-surface-white: #FFFFFF;
+  --color-border-light: rgba(15, 23, 42, 0.08);
+
+  /* Soft Blue Alternate Surfaces */
+  --color-surface-soft-blue: #F0F4F8;
+  --color-surface-soft-blue-alt: #E6EEF6;
+  --color-border-soft-blue: #D6E2EE;
+
+  /* High-Impact Dark Surfaces */
+  --color-dark-bg: #07152E;
+  --color-dark-surface: #0B1F44;
+  --color-dark-card: #102652;
+  --color-dark-border: rgba(255, 255, 255, 0.12);
+
+  /* Typography Colors - Light Surfaces */
+  --color-text-navy: #07152E;
+  --color-text-charcoal: #0F172A;
+  --color-text-body: #334155;
+  --color-text-muted: #64748B;
+
+  /* Typography Colors - Dark High-Impact Surfaces */
+  --color-text-dark-primary: #F8FAFC;
+  --color-text-dark-secondary: #CBD5E1;
+  --color-text-dark-muted: #94A3B8;
 
   /* Layout */
-  --header-height: 72px;
+  --header-height: 70px;
   --header-height-mobile: 64px;
 
-  /* Motion Defaults */
+  /* Transitions */
   --transition-fast: 150ms ease-out;
   --transition-normal: 220ms ease-out;
   --transition-slow: 400ms ease-out;
 }
-

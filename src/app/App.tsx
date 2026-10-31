@@ -1,10 +1,19 @@
 import React from 'react';
 import { SiteHeader } from '../components/layout/SiteHeader';
 import { HeroSection } from '../sections/HeroSection/HeroSection';
+import { OwnerLeadsSection } from '../sections/OwnerLeads/OwnerLeadsSection';
+import { HumanSupportSection } from '../sections/HumanSupport/HumanSupportSection';
+import { SolutionsSection } from '../sections/Solutions/SolutionsSection';
+import { HowItWorksSection } from '../sections/HowItWorks/HowItWorksSection';
+import { AudienceSection } from '../sections/Audience/AudienceSection';
+import { WhyDealestateSection } from '../sections/WhyDealestate/WhyDealestateSection';
+import { FAQSection } from '../sections/FAQ/FAQSection';
+import { ContactSection } from '../sections/Contact/ContactSection';
+import { SiteFooter } from '../components/layout/SiteFooter';
 
 export const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-dark-bg text-text-primary flex flex-col antialiased selection:bg-gold/30 selection:text-gold-light">
+    <div className="min-h-screen bg-ivory text-text-charcoal flex flex-col antialiased selection:bg-gold/30 selection:text-gold-deep">
       {/* Top Anchor */}
       <div id="top" className="sr-only" />
 
@@ -13,33 +22,38 @@ export const App: React.FC = () => {
 
       {/* Main Content Area */}
       <main id="main-content" className="flex-1 flex flex-col">
-        {/* Phase 1 Core Deliverable: Hero Section */}
+        {/* Hero Section with Cinematic Skyline Background */}
         <HeroSection />
 
-        {/* Phase 2 Anchor Stubs (Ensures Header and CTA Anchor Links function seamlessly) */}
-        <div id="owner-leads" className="sr-only" aria-hidden="true" />
-        <div id="human-support" className="sr-only" aria-hidden="true" />
-        <div id="solutions" className="sr-only" aria-hidden="true" />
-        <div id="how-it-works" className="sr-only" aria-hidden="true" />
-        <div id="why-dealestate" className="sr-only" aria-hidden="true" />
-        <div id="faq" className="sr-only" aria-hidden="true" />
-        <div id="contact" className="sr-only" aria-hidden="true" />
+        {/* 1. Owner Lead Categories (Dominant Warm Ivory Surface) */}
+        <OwnerLeadsSection />
+
+        {/* 2. Human-Led Sales Support Spotlight (High-Impact Deep Navy Section) */}
+        <HumanSupportSection />
+
+        {/* 3. Solutions / Complete Growth Support (Alternate Soft Blue Surface) */}
+        <SolutionsSection />
+
+        {/* 4. The 7-Step Process Workflow (Warm Ivory Surface) */}
+        <HowItWorksSection />
+
+        {/* 5. Target Audience Profiles (Soft Blue Surface) */}
+        <AudienceSection />
+
+        {/* 6. Why Dealestate Advantages (Warm Ivory Surface) */}
+        <WhyDealestateSection />
+
+        {/* 7. Frequently Asked Questions Accordion (Soft Blue Surface) */}
+        <FAQSection />
+
+        {/* 8. Final CTA & Lead Conversion Form (High-Impact Deep Navy Section) */}
+        <ContactSection />
       </main>
 
-      {/* Baseline Footer */}
-      <footer className="w-full border-t border-white/10 bg-navy-950 py-8 text-center text-xs text-text-muted">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-text-secondary">
-            &copy; {new Date().getFullYear()} Dealestate. All rights reserved.
-          </p>
-          <p className="text-[11px] text-text-muted">
-            India’s First Human-Led, AI-Powered Real Estate Growth System
-          </p>
-        </div>
-      </footer>
+      {/* Official Dealestate Footer (Deep Navy) */}
+      <SiteFooter />
     </div>
   );
 };
 
 export default App;
-

@@ -7,7 +7,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    color-scheme: dark;
+    color-scheme: light dark;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -34,16 +34,32 @@
     overflow-x: hidden;
     position: relative;
     width: 100%;
+    background-color: var(--color-surface-ivory);
+    color: var(--color-text-charcoal);
   }
 }
 
 @layer utilities {
-  /* Subtle glass card style */
+  /* Subtle glass card style for dark sections */
   .glass-card {
     background: rgba(14, 21, 34, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Subtle card style for light/ivory sections */
+  .card-light {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+    transition: all 0.25s ease-out;
+  }
+
+  .card-light:hover {
+    border-color: rgba(212, 160, 23, 0.4);
+    box-shadow: 0 12px 30px -4px rgba(15, 23, 42, 0.08);
+    transform: translateY(-2px);
   }
 
   /* Gold gradient text with luminous clarity and drop shadow */
@@ -52,6 +68,11 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.9));
+  }
+
+  /* Gold text for light backgrounds */
+  .gold-text-light {
+    color: #B88910;
   }
 
   /* Premium text shadow for hero readability over photography */
