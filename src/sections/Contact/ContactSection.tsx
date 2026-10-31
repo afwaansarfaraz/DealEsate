@@ -4,7 +4,6 @@ import {
   CheckCircle2,
   MessageSquare,
   AlertCircle,
-  AlertTriangle,
   ShieldCheck,
   Phone,
   Mail,
@@ -26,7 +25,7 @@ import {
   hasLinkedInContact,
   hasInstagramContact,
 } from '../../data/siteConfig';
-import { submitContactForm, isContactFormConfigured, ContactFormData } from '../../lib/contact';
+import { submitContactForm, ContactFormData } from '../../lib/contact';
 
 export const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -41,7 +40,7 @@ export const ContactSection: React.FC = () => {
   });
 
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error' | 'unconfigured'>('idle');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [statusMessage, setStatusMessage] = useState('');
 
   const validate = (): boolean => {
@@ -115,15 +114,6 @@ export const ContactSection: React.FC = () => {
       return;
     }
 
-    // Check if integration is configured
-    if (!isContactFormConfigured()) {
-      setStatus('unconfigured');
-      setStatusMessage(
-        'The online enquiry endpoint is currently unconfigured. Set VITE_FORM_ENDPOINT or VITE_WEB3FORMS_ACCESS_KEY in your environment to enable automated submissions. In the meantime, please connect directly via WhatsApp, phone, or email below.'
-      );
-      return;
-    }
-
     setStatus('submitting');
     setStatusMessage('');
 
@@ -131,9 +121,6 @@ export const ContactSection: React.FC = () => {
 
     if (result.success) {
       setStatus('success');
-      setStatusMessage(result.message);
-    } else if (!result.isConfigured) {
-      setStatus('unconfigured');
       setStatusMessage(result.message);
     } else {
       setStatus('error');
@@ -372,42 +359,33 @@ export const ContactSection: React.FC = () => {
                     </span>
                   </div>
 
-                  {status === 'unconfigured' && (
-                    <div className="p-3.5 rounded-xl bg-amber-950/70 border border-amber-600/50 text-xs text-amber-200 flex items-start gap-2.5">
-                      <AlertTriangle className="w-4 h-4 shrink-0 text-amber-400 mt-0.5" />
-                      <div>
-                        <strong className="block font-semibold mb-0.5 text-amber-300">
-                          Integration Configuration Pending:
-                        </strong>
-                        <span className="leading-relaxed block mb-2">{statusMessage}</span>
-                        <div className="flex flex-wrap gap-2 pt-1 border-t border-amber-600/30">
-                          {hasPhoneContact(siteConfig) && (
-                            <a
-                              href={`tel:${cleanPhoneLink}`}
-                              className="inline-flex items-center gap-1 font-semibold text-gold-light hover:underline"
-                            >
-                              <Phone className="w-3 h-3" /> Call: {siteConfig.contact.phone}
-                            </a>
-                          )}
-                          {hasWhatsAppContact(siteConfig) && (
-                            <a
-                              href={`https://wa.me/${siteConfig.contact.whatsappNumber}?text=Hi%20Dealestate%2C%20I%20am%20interested%20in%20verified%20owner%20leads.`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1 font-semibold text-emerald-400 hover:underline"
-                            >
-                              <MessageSquare className="w-3 h-3" /> WhatsApp
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
                   {status === 'error' && (
-                    <div className="p-3 rounded-lg bg-red-950/80 border border-red-800/60 text-xs text-red-200 flex items-center gap-2">
-                      <AlertCircle className="w-4 h-4 shrink-0 text-red-400" />
-                      <span>{statusMessage}</span>
+                    <div className="p-3.5 rounded-xl bg-red-950/80 border border-red-700/60 text-xs text-red-200 space-y-2">
+                      <div className="flex items-start gap-2">
+                        <AlertCircle className="w-4 h-4 shrink-0 text-red-400 mt-0.5" />
+                        <span>{statusMessage}</span>
+                      </div>
+                      <div className="flex flex-wrap gap-2.5 pt-2 border-t border-red-900/40 text-[11px]">
+                        <span className="text-slate-300 font-medium">Instant Assistance:</span>
+                        {hasPhoneContact(siteConfig) && (
+                          <a
+                            href={`tel:${cleanPhoneLink}`}
+                            className="inline-flex items-center gap-1 font-semibold text-gold-light hover:underline"
+                          >
+                            <Phone className="w-3 h-3" /> Call: {siteConfig.contact.phone}
+                          </a>
+                        )}
+                        {hasWhatsAppContact(siteConfig) && (
+                          <a
+                            href={`https://wa.me/${siteConfig.contact.whatsappNumber}?text=Hi%20Dealestate%2C%20I%20would%20like%20to%20inquire%20about%20owner%20leads.`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 font-semibold text-emerald-400 hover:underline"
+                          >
+                            <MessageSquare className="w-3 h-3" /> WhatsApp Desk
+                          </a>
+                        )}
+                      </div>
                     </div>
                   )}
 

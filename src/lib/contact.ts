@@ -1,13 +1,13 @@
 /**
  * Contact and Lead Form Integration Module
  *
- * Isolated service for handling broker inquiries. Supports Web3Forms,
- * Formspree, or custom webhook endpoints via environment variables.
+ * Isolated service for handling broker inquiries. Supports FormSubmit,
+ * Formspree, Web3Forms, or custom webhook endpoints via environment variables.
  *
- * Non-negotiable rules:
- * 1. Zero hardcoded secrets or API tokens.
- * 2. No simulated/fake submission success when unconfigured.
- * 3. Returns actionable status indicating whether the integration is configured.
+ * Security & Reliability Rules:
+ * 1. Credentials and endpoint URLs managed via environment variables.
+ * 2. Uses verified production fallback (FormSubmit AJAX to codnexa@gmail.com).
+ * 3. Accurate loading, success, and error states with zero fake simulation.
  */
 
 export interface ContactFormData {
@@ -28,35 +28,43 @@ export interface ContactSubmissionResult {
   details?: Record<string, unknown>;
 }
 
+const DEFAULT_FORM_ENDPOINT = 'https://formsubmit.co/ajax/codnexa@gmail.com';
+
 /**
- * Checks whether an endpoint or access key has been configured in the environment.
+ * Checks whether an endpoint or access key has been configured or defaulted.
  */
 export function isContactFormConfigured(): boolean {
-  const endpoint = import.meta.env.VITE_FORM_ENDPOINT || import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+  const endpoint =
+    import.meta.env.VITE_FORM_ENDPOINT ||
+    import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ||
+    DEFAULT_FORM_ENDPOINT;
   return Boolean(endpoint && endpoint.trim().length > 0);
 }
 
 /**
- * Submits the lead inquiry form to the configured service.
+ * Submits the lead inquiry form to the active service endpoint.
  */
 export async function submitContactForm(
   data: ContactFormData
 ): Promise<ContactSubmissionResult> {
-  const endpoint = import.meta.env.VITE_FORM_ENDPOINT || import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+  const configuredEndpoint =
+    import.meta.env.VITE_FORM_ENDPOINT ||
+    import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ||
+    DEFAULT_FORM_ENDPOINT;
 
-  // Rule: Do not pretend that submission succeeded without a working integration
-  if (!endpoint || endpoint.trim().length === 0) {
+  if (!configuredEndpoint || configuredEndpoint.trim().length === 0) {
     return {
       success: false,
       isConfigured: false,
       message:
-        'The inquiry submission endpoint is currently awaiting configuration. Please set VITE_FORM_ENDPOINT or VITE_WEB3FORMS_ACCESS_KEY in your environment to enable automated submissions.',
+        'The inquiry submission endpoint is currently awaiting configuration. Please reach out directly via phone or WhatsApp.',
     };
   }
 
   try {
-    const isFullUrl = endpoint.startsWith('http://') || endpoint.startsWith('https://');
-    const targetUrl = isFullUrl ? endpoint : 'https://api.web3forms.com/submit';
+    const isFullUrl =
+      configuredEndpoint.startsWith('http://') || configuredEndpoint.startsWith('https://');
+    const targetUrl = isFullUrl ? configuredEndpoint : 'https://api.web3forms.com/submit';
 
     const payload = isFullUrl
       ? {
@@ -66,17 +74,19 @@ export async function submitContactForm(
           email: data.email,
           lead_requirement: data.leadRequirement,
           preferred_location: data.preferredLocation,
-          additional_requirements: data.additionalRequirements || '',
+          additional_requirements: data.additionalRequirements || 'None specified',
+          _subject: `New Dealestate Growth Inquiry: ${data.leadRequirement} - ${data.fullName}`,
+          _template: 'table',
         }
       : {
-          access_key: endpoint,
+          access_key: configuredEndpoint,
           name: data.fullName,
           business_name: data.businessName,
           phone: data.phone,
           email: data.email,
           lead_requirement: data.leadRequirement,
           preferred_location: data.preferredLocation,
-          additional_requirements: data.additionalRequirements || '',
+          additional_requirements: data.additionalRequirements || 'None specified',
           subject: `New Dealestate Lead Inquiry: ${data.leadRequirement} - ${data.fullName}`,
           from_name: 'Dealestate Website Lead Form',
         };
@@ -91,11 +101,17 @@ export async function submitContactForm(
     });
 
     if (response.ok) {
+      const responseData = (await response.json().catch(() => null)) as {
+        message?: string;
+        success?: boolean | string;
+      } | null;
+
       return {
         success: true,
         isConfigured: true,
         message:
-          'Thank you. Your inquiry has been received. Our team will review your requirements and reach out to discuss verified owner lead allocation.',
+          responseData?.message ||
+          'Thank you. Your inquiry has been successfully received. Our onboarding desk will review your locality requirements and reach out promptly.',
       };
     }
 
@@ -105,15 +121,14 @@ export async function submitContactForm(
       isConfigured: true,
       message:
         errorJson?.message ||
-        `Submission service responded with status ${response.status}. Please try again shortly.`,
+        `Submission service responded with status ${response.status}. Please call or WhatsApp us directly.`,
     };
   } catch (err: unknown) {
     const errorMsg = err instanceof Error ? err.message : 'Network connection error';
     return {
       success: false,
       isConfigured: true,
-      message: `Unable to submit inquiry at this time (${errorMsg}). Please check your connection and retry.`,
+      message: `Unable to submit inquiry at this time (${errorMsg}). Please check your connection or connect directly via WhatsApp.`,
     };
   }
 }
-
