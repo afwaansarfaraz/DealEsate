@@ -17,7 +17,7 @@
 [![Lighthouse SEO](https://img.shields.io/badge/Lighthouse_SEO-100%2F100-success?style=flat-square&logo=googlechrome&logoColor=white)](qa-reports/PRODUCTION_READINESS_REPORT.md)
 [![License](https://img.shields.io/badge/License-Proprietary-red?style=flat-square)](#-license)
 
-[Project Overview](#-project-overview) • [Website Preview](#-website-preview) • [Complete Screenshots](#-complete-website-screenshots) • [Responsive Showcase](#-responsive-design-showcase) • [Architecture](#-project-architecture) • [Getting Started](#-installation--setup) • [Contact](#-official-contact--business-details)
+[Project Overview](#-project-overview) • [Desktop Preview](#-desktop-preview) • [Mobile Preview](#-mobile-preview) • [Section Screenshots](#-complete-website-screenshots) • [Responsive Showcase](#-responsive-showcase) • [Interactions](#-interactive-states) • [Architecture](#-project-architecture) • [Getting Started](#-installation--setup) • [Contact](#-official-contact--business-details)
 
 </div>
 
@@ -25,134 +25,206 @@
 
 ## 📖 Project Overview
 
-**Dealestate** is a premium, technology-enabled real estate growth system engineered for Indian property brokers, independent consultants, and multi-agent agencies. Operating under the umbrella of **Codnexa**, Dealestate solves the fundamental failure of conventional property portals: noise, duplicate broker listings, lack of human follow-up, and shared leads auctioned to multiple competitors at once.
+**Dealestate** is an enterprise-grade real estate growth system engineered specifically for Indian property brokers, independent real-estate consultants, and multi-agent commercial firms. Operating under the umbrella of **Codnexa**, Dealestate eliminates the chronic pitfalls of traditional property portals: noise, duplicate broker spam, lack of follow-up bandwidth, and shared leads auctioned to 10+ brokers simultaneously.
 
-### Core Value Proposition
+### The Problem in Indian Real Estate
+Traditional portals operate on a volume-first listing aggregation model. Brokers spend high monthly subscription fees only to receive recycled leads that have already been telephoned by dozens of competing agencies, resulting in hostile property owners, burned relationships, and wasted operational hours.
 
-Unlike generic lead generation platforms that sell raw portal scrapes to 10+ brokers simultaneously, Dealestate combines **algorithmic AI screening** with a **dedicated human operations layer**:
+### The Dealestate Solution
+Dealestate pairs **algorithmic AI screening** with a **dedicated human operations layer**:
 
-1. **Strict 1 Client : 1 Lead Exclusivity**: Leads are locked strictly to a single broker within their target micro-market and pin codes. Zero shared leads.
-2. **Dedicated Human Sales Specialist Layer**: Trained real estate callers telephone prospective property owners directly to verify intent, confirm listing parameters, and qualify motivation before dispatch.
-3. **AI-Assisted Listing Screening**: Machine-learning heuristics detect duplicate phone numbers, suppress broker reposts, and cross-reference public property feeds in real time.
-4. **Multi-Stream Focus**: High-intent property-owner opportunities across **Residential Rental**, **Residential Resale**, and **Commercial** sectors.
+1. **Strict 1 Client : 1 Lead Exclusivity**: Every verified property-owner lead is allocated strictly to a single broker within their target pin code or micro-market. Zero shared leads.
+2. **Dedicated Human Sales Specialist Layer**: Trained real estate tele-calling specialists directly contact property owners to verify ownership documentation, confirm commercial parameters, qualify seller motivation, and secure scheduled visit slots.
+3. **AI-Assisted Listing Screening**: Automated heuristics parse public listings, eliminate duplicate contact numbers, detect broker reposts, and cross-reference tax and municipal databases in real time.
+4. **Three Dedicated Owner Categories**: High-intent property-owner acquisition channels across **Residential Rental**, **Residential Resale**, and **Commercial Property** sectors.
 
 ---
 
-## 🖥️ Website Preview
+## 🖥️ Desktop Preview
 
 ![Dealestate Desktop Homepage](docs/screenshots/desktop/homepage.png)
 
-*The Dealestate homepage featuring the luminous Mumbai sunset skyline, strategic value proposition, and the interactive Lead Allocation & Screening Desk mockup.*
+*The complete Dealestate desktop homepage featuring the luminous Mumbai skyline hero, single-line Commercial Owner badge, interactive Lead Allocation & Screening Desk, and high-contrast design system.*
+
+---
+
+## 📱 Mobile Preview
+
+<div align="center">
+  <img src="docs/screenshots/mobile/homepage.png" alt="Dealestate Mobile Homepage" width="390" />
+</div>
+
+*Full mobile experience (390px viewport) verified with zero horizontal overflow, fluid responsive typography, and mobile-first touch ergonomics.*
 
 ---
 
 ## 📸 Complete Website Screenshots
 
-The repository contains real, browser-rendered screenshots for all 13 production sections of the Dealestate website:
+Every screenshot below is freshly captured from the live rendered website at standard desktop viewport (`1440 × 900`):
 
-### 1. Sticky Navigation Bar & Header
-![Sticky Navigation Bar](docs/screenshots/desktop/navbar.png)
-*Sticky header with a `#07152E` backdrop-blur finish, official Dealestate WebP logo, active section highlighting, and primary CTA.*
+### 1. Sticky Navigation Header
+![Sticky Navigation Header](docs/screenshots/desktop/navbar.png)
+*High-contrast header with `#08172B` backdrop blur, crisp vector logo, active section tracking, and primary lead allocation CTA.*
 
 ### 2. Homepage Hero Section
-![Homepage Hero Section](docs/screenshots/desktop/homepage.png)
-*High-contrast hero section with responsive Mumbai skyline background, brand positioning, and one-click lead inquiry actions.*
+![Homepage Hero Section](docs/screenshots/desktop/hero.png)
+*Hero section with Mumbai skyline photography, strategic value proposition, primary action buttons, and live pipeline status.*
 
-### 3. Lead Allocation & Screening Desk Mockup
+### 3. Lead Allocation & Screening Desk
 ![Lead Allocation & Screening Desk](docs/screenshots/desktop/lead-allocation-desk.png)
-*Static UI simulation showing verified Rental, Resale, and Commercial lead cards with 1:1 exclusivity pills and real-time verification tags.*
+*High-contrast operational desk preview highlighting live pipeline verification, Rental Owner, Resale Owner, and single-line Commercial Owner badges with 1:1 exclusivity pills.*
 
 ### 4. Verified Owner Leads Section
 ![Verified Owner Leads Section](docs/screenshots/desktop/owner-leads.png)
-*Three distinct category cards detailing Rental, Resale, and Commercial owner acquisition criteria on a warm ivory surface.*
+*Three comprehensive acquisition tiers: Residential Rental, Residential Resale, and Commercial Owner leads on a warm ivory surface.*
 
 ### 5. Dedicated Human Sales Support Section
 ![Dedicated Human Sales Support Section](docs/screenshots/desktop/human-support.png)
-*Deep navy high-impact section showcasing Dealestate's core differentiator: trained human callers managing qualification and scheduling.*
+*Deep navy high-impact section showcasing Dealestate's core differentiator: trained tele-calling professionals who handle qualifying calls and site-visit scheduling.*
 
-### 6. Complete Growth Solutions Section
-![Complete Growth Solutions Section](docs/screenshots/desktop/solutions.png)
-*Seven specialized business solutions featuring a harmonized color rhythm: Warm Ivory hero card, Deep Navy differentiator card, and Soft Blue CRM.*
+### 6. Growth Solutions Section
+![Growth Solutions Section](docs/screenshots/desktop/solutions.png)
+*Seven specialized business solutions featuring a balanced color rhythm across Warm Ivory, Deep Navy, and Soft Blue surfaces with antique gold accents.*
 
-### 7. How It Works (7-Stage Process Pipeline) Section
+### 7. How It Works (7-Stage Workflow Pipeline)
 ![How It Works Section](docs/screenshots/desktop/how-it-works.png)
-*Continuous 7-stage workflow (`Source ➔ Filter ➔ Screen ➔ Review ➔ Allocate ➔ Deliver ➔ Track`) with dedicated pipeline track and stage indicators.*
+*Continuous 7-stage operational workflow (`Source ➔ Filter ➔ Screen ➔ Review ➔ Allocate ➔ Deliver ➔ Track`) with dedicated pipeline track and numbered milestones.*
 
-### 8. Who We Serve (Target Audience) Section
+### 8. Who We Serve (Client Profiles)
 ![Who We Serve Section](docs/screenshots/desktop/who-we-serve.png)
 *Tailored operational models for Independent Luxury Brokers, Multi-Agent Brokerages, and Specialized Commercial Consultants.*
 
-### 9. Why Dealestate (Competitive Advantages) Section
+### 9. Why Dealestate (Market Differentiation)
 ![Why Dealestate Section](docs/screenshots/desktop/why-dealestate.png)
-*Side-by-side contrast between traditional noisy portals and Dealestate's exclusive 1:1 model with human-in-the-loop verification.*
+*Side-by-side comparison between traditional mass portals and Dealestate's exclusive 1:1 model with human-in-the-loop qualification.*
 
-### 10. Frequently Asked Questions (FAQ) Section
+### 10. Frequently Asked Questions (FAQ)
 ![FAQ Section](docs/screenshots/desktop/faq.png)
-*Ten accessible accordion items detailing pricing brackets, exclusivity locks, geographic rollouts, and replacement guidelines.*
+*Ten fully accessible accordion questions detailing pricing brackets, exclusivity locks, geographic rollouts, and replacement guidelines.*
 
-### 11. Contact & Locality Allocation Section
+### 11. Contact & Locality Allocation Hub
 ![Contact Section](docs/screenshots/desktop/contact.png)
-*Direct communication hub displaying official phone, WhatsApp, email, operating hours, and verified social channels.*
+*Direct communication hub displaying direct phone, WhatsApp channel, email desk, operating hours, and verified social channels.*
 
 ### 12. Growth Inquiry Form
 ![Growth Inquiry Form](docs/screenshots/desktop/contact-form.png)
-*Live lead booking form with client-side validation, loading indicators, FormSubmit endpoint integration, and instant WhatsApp/phone fallback.*
+*Live lead reservation form with real-time validation, FormSubmit AJAX endpoint, loading indicators, and fallback action pills.*
 
 ### 13. Site Footer
 ![Site Footer](docs/screenshots/desktop/footer.png)
-*Comprehensive footer with Codnexa attribution, navigation sitemap links, legal copyright notices, and back-to-top trigger.*
+*Footer with Codnexa attribution, sitemap navigation links, legal copyright notices, and back-to-top trigger.*
 
 ---
 
-## 📱 Responsive Design Showcase
+## 💻 Laptop Showcase (1280px)
 
-The Dealestate website was tested across **14 distinct viewport resolutions** and verified to have **0px horizontal overflow** at all screen sizes.
+Captured at standard laptop viewport (`1280 × 800`):
 
-### Viewport Comparison
+| Homepage | Hero Section |
+|:---:|:---:|
+| ![Laptop Homepage](docs/screenshots/laptop/homepage.png) | ![Laptop Hero](docs/screenshots/laptop/hero.png) |
+| *Full laptop viewport rendering* | *Luminous Mumbai skyline and CTAs* |
 
-| Resolution | Device Class | Full Page Preview |
+| Solutions Grid | How It Works Pipeline | Contact Section |
 |:---:|:---:|:---:|
-| **1440 × 900** | Desktop Standard | [View Desktop Full Screenshot](docs/screenshots/responsive/desktop-1440.png) |
-| **1280 × 800** | Laptop Standard | [View Laptop Full Screenshot](docs/screenshots/responsive/laptop-1280.png) |
-| **768 × 1024** | Tablet Portrait | [View Tablet Full Screenshot](docs/screenshots/responsive/tablet-768.png) |
-| **390 × 844** | Mobile Standard (iPhone) | [View Mobile Full Screenshot](docs/screenshots/responsive/mobile-390.png) |
-| **360 × 800** | Mobile Compact (Android) | [View Mobile Compact Screenshot](docs/screenshots/responsive/mobile-360.png) |
+| ![Laptop Solutions](docs/screenshots/laptop/solutions.png) | ![Laptop How It Works](docs/screenshots/laptop/how-it-works.png) | ![Laptop Contact](docs/screenshots/laptop/contact.png) |
+| *Multi-column card layout* | *7-stage operational workflow* | *Lead allocation desk form* |
 
-### Mobile-Optimized User Experience
+---
 
-| Mobile Navigation Drawer | Mobile Owner Leads | Mobile How It Works |
+## 📱 Tablet Showcase (768px)
+
+Captured at standard tablet portrait viewport (`768 × 1024`):
+
+| Tablet Navigation State | Tablet Hero Section | Tablet Owner Leads |
 |:---:|:---:|:---:|
-| ![Mobile Navigation](docs/screenshots/mobile/navigation.png) | ![Mobile Leads](docs/screenshots/mobile/owner-leads.png) | ![Mobile Process](docs/screenshots/mobile/how-it-works.png) |
-| *Slide-over menu with touch targets $\ge 44\text{px}$* | *Fluid stacked cards optimized for vertical scroll* | *Streamlined 7-stage vertical process rail* |
+| ![Tablet Navigation](docs/screenshots/tablet/navigation.png) | ![Tablet Hero](docs/screenshots/tablet/hero.png) | ![Tablet Owner Leads](docs/screenshots/tablet/owner-leads.png) |
+| *Slide-out menu with high contrast* | *Centered headline and pipeline desk* | *Vertically stacked category cards* |
 
-| Mobile Solutions Grid | Mobile Contact & Form | Mobile Footer |
+| Tablet Solutions | Tablet How It Works | Tablet Contact Form |
 |:---:|:---:|:---:|
-| ![Mobile Solutions](docs/screenshots/mobile/solutions.png) | ![Mobile Contact](docs/screenshots/mobile/contact.png) | ![Mobile Footer](docs/screenshots/mobile/footer.png) |
-| *Adaptive single-column cards with gold accents* | *Full-width inputs with high-contrast text* | *Stacked legal and navigation links* |
+| ![Tablet Solutions](docs/screenshots/tablet/solutions.png) | ![Tablet How It Works](docs/screenshots/tablet/how-it-works.png) | ![Tablet Contact Form](docs/screenshots/tablet/contact-form.png) |
+| *Two-column adaptive cards* | *Sequential 7-stage workflow rail* | *Full-width inquiry reservation card* |
 
-### Interactive States
+---
 
-| FAQ Accordion Expanded | Mobile Drawer Open | Validation Error States |
+## 📲 Mobile Showcase (390px, 375px, 360px)
+
+The mobile experience was rigorously tested across common Indian smartphone widths. All touch targets meet or exceed $\ge 44\text{px}$, with zero horizontal overflow:
+
+### Mobile Navigation Drawer (Contrast Verified)
+
+| Mobile Sidebar CLOSED | Mobile Sidebar OPEN |
+|:---:|:---:|
+| ![Mobile Sidebar Closed](docs/screenshots/mobile/sidebar-closed.png) | ![Mobile Sidebar Open](docs/screenshots/mobile/sidebar-open.png) |
+| *Clean navbar with hamburger toggle* | *Deep Navy `#08172B` surface, Warm Ivory text, and Gold indicators* |
+
+> [!NOTE]
+> **Mobile Sidebar Contrast Enhancement**: The mobile slide-over navigation drawer utilizes high-contrast `#F7F3EA` typography, `#D9A323` indicator chevrons, and a high-visibility close button, ensuring perfect readability in both outdoor and low-light environments.
+
+### Core Mobile Sections
+
+| Mobile Hero & Desk | Mobile Owner Leads | Mobile Human Support |
 |:---:|:---:|:---:|
-| ![FAQ Expanded](docs/screenshots/interactions/faq-open.png) | ![Menu Open](docs/screenshots/interactions/mobile-menu-open.png) | ![Form Validation](docs/screenshots/interactions/form-validation.png) |
-| *Smooth CSS transition with `aria-expanded` toggle* | *Full backdrop blur with trap-focus behavior* | *Real-time inline errors on missing fields* |
+| ![Mobile Hero](docs/screenshots/mobile/hero.png) | ![Mobile Owner Leads](docs/screenshots/mobile/owner-leads.png) | ![Mobile Human Support](docs/screenshots/mobile/human-support.png) |
+| *Compact headline & live desk* | *Single-column acquisition cards* | *Differentiator showcase* |
+
+| Mobile Solutions | Mobile How It Works | Mobile Who We Serve |
+|:---:|:---:|:---:|
+| ![Mobile Solutions](docs/screenshots/mobile/solutions.png) | ![Mobile How It Works](docs/screenshots/mobile/how-it-works.png) | ![Mobile Who We Serve](docs/screenshots/mobile/who-we-serve.png) |
+| *Harmonized ivory & blue cards* | *Vertical 7-stage process timeline* | *Client profile tiers* |
+
+| Mobile Why Dealestate | Mobile FAQ | Mobile Contact Form |
+|:---:|:---:|:---:|
+| ![Mobile Why Dealestate](docs/screenshots/mobile/why-dealestate.png) | ![Mobile FAQ](docs/screenshots/mobile/faq.png) | ![Mobile Contact Form](docs/screenshots/mobile/contact-form.png) |
+| *Portal comparison metrics* | *Tap-to-expand accordions* | *Native-feeling touch fields* |
+
+### Mobile Viewport Validation
+
+| iPhone SE / Standard (375px) | Compact Android (360px) |
+|:---:|:---:|
+| ![Mobile 375px](docs/screenshots/mobile/mobile-375px.png) | ![Mobile 360px](docs/screenshots/mobile/mobile-360.png) |
+| *Perfect responsive wrapping at 375px* | *Zero horizontal scroll at 360px* |
+
+---
+
+## 🎯 Interactive States
+
+Every interactive state is verified directly in the running browser:
+
+| FAQ Accordion Expanded | Form Validation Errors | Verified Form Submission |
+|:---:|:---:|:---:|
+| ![FAQ Expanded](docs/screenshots/interactions/faq-expanded.png) | ![Form Validation](docs/screenshots/interactions/form-validation.png) | ![Form Success](docs/screenshots/interactions/form-success.png) |
+| *Smooth CSS height transition with `aria-expanded`* | *Real-time inline validation on missing required inputs* | *Live FormSubmit AJAX submission confirmation* |
+
+| Custom Gold Cursor Hover | Mobile Slide-Out Menu |
+|:---:|:---:|
+| ![Custom Cursor](docs/screenshots/interactions/custom-cursor.png) | ![Mobile Menu Open](docs/screenshots/interactions/mobile-menu-open.png) |
+| *Antique-gold custom cursor with scale effect on interactive CTAs* | *Full viewport drawer with keyboard focus trap* |
 
 ---
 
 ## ⚡ Implemented Features
 
-- [x] **Strict 1:1 Exclusivity**: Zero shared leads — opportunities locked exclusively to a single broker account per micro-market.
-- [x] **Human Sales Specialist Layer**: Highlights trained tele-calling professionals who qualify seller intent.
-- [x] **AI-Powered Screening Desk**: Illustrative dashboard preview displaying real-time listing verification.
-- [x] **7-Stage Workflow Pipeline**: Visual step ribbon guiding brokers from initial sourcing to CRM feedback synchronization.
+- [x] **Strict 1:1 Exclusivity Architecture**: Zero shared leads — property-owner records are locked to a single broker account per micro-market and pin code.
+- [x] **Human Sales Specialist Layer**: Highlights trained tele-calling professionals who qualify seller intent, verify property documentation, and schedule meetings.
+- [x] **AI-Powered Screening Desk Mockup**: Illustrative dashboard preview displaying real-time listing verification and live pipeline metrics.
+- [x] **Single-Line Commercial Owner Badge**: Visual consistency across Rental, Resale, and Commercial cards with zero awkward text wrapping.
+- [x] **7-Stage Workflow Pipeline**: Visual milestone rail guiding brokers from initial sourcing to CRM feedback synchronization.
 - [x] **Multi-Category Owner Leads**: Dedicated cards for Rental, Resale, and Commercial acquisition channels.
 - [x] **Interactive FAQ Accordion**: Ten accessible FAQ items with single-expansion keyboard and touch accessibility.
-- [x] **Production Contact Form**:
-  - Client-side validation (Full Name, Business Name, Phone, Email, Location, Terms Consent).
-  - Dynamic loading state (`Submitting Inquiry...`).
-  - Active FormSubmit endpoint (`https://formsubmit.co/ajax/codnexa@gmail.com`).
-  - Fallback telephone (`tel:+916394623162`) and WhatsApp (`wa.me/916394623162`) action pills on error or activation notice.
-- [x] **Responsive Image System**: Picture elements with responsive media queries serving WebP images (`min-width: 768px` for desktop, `max-width: 767px` for mobile).
+- [x] **Antique-Gold Custom Cursor**:
+  - Custom dot and trailing circle styled in antique gold (`#D9A323`).
+  - Active hover scaling on links, buttons, inputs, and textareas.
+  - Automatic touch rejection (`pointerType === "touch"`).
+  - Energy-efficient stationary animation halting when pointer is idle.
+- [x] **Production Contact Form Experience**:
+  - Client-side validation (Full Name, Business Name, Phone, Email, Location, Consent).
+  - FormSubmit AJAX endpoint (`https://formsubmit.co/ajax/codnexa@gmail.com`).
+  - Genuine inline confirmation: *"Your enquiry has been submitted successfully! Our team will get back to you soon."*
+  - Duplicate submission prevention and reset triggers.
+  - Fallback telephone (`tel:+916394623162`) and WhatsApp (`wa.me/916394623162`) direct channels.
+- [x] **Official Brand Favicon**: Dealestate geometric logo symbol rendered on dark navy background across `favicon.ico` and `favicon.png`.
 - [x] **Comprehensive SEO Architecture**: Pre-configured JSON-LD structured data (Organization, WebSite, Service), `robots.txt`, `sitemap.xml`, and `llms.txt`.
 
 ---
@@ -177,23 +249,23 @@ The Dealestate website was tested across **14 distinct viewport resolutions** an
 DealEsate/
 ├── docs/
 │   └── screenshots/              # Real browser-captured screenshots for documentation
-│       ├── desktop/              # 13 section screenshots (1440px desktop)
-│       ├── tablet/               # Tablet homepage and contact views
-│       ├── mobile/               # Mobile views (390px / 360px)
-│       ├── interactions/         # FAQ open, mobile menu, and form validation states
-│       └── responsive/           # Full-page comparison across 5 resolutions
+│       ├── desktop/              # 14 section screenshots (1440px desktop)
+│       ├── laptop/               # 5 laptop screenshots (1280px)
+│       ├── tablet/               # 7 tablet screenshots (768px)
+│       ├── mobile/               # 17 mobile screenshots (390px, 375px, 360px)
+│       └── interactions/         # 7 interactive states (menu, FAQ, validation, success, cursor)
 ├── public/
 │   ├── assets/
 │   │   ├── brand/                # Dealestate official logo assets (WebP, PNG)
-│   │   └── hero/                 # Mumbai skyline hero photography (WebP, JPG)
-│   ├── favicon.ico               # Standard browser favicon
+│   │   └── hero/                 # Mumbai skyline photography (WebP, JPG)
+│   ├── favicon.ico               # Standard browser tab favicon
 │   ├── favicon.png               # High-res PNG favicon
 │   ├── llms.txt                  # LLM crawler summary and context manifest
 │   ├── robots.txt                # Search engine crawler permissions
 │   └── sitemap.xml               # Complete XML sitemap for search engines
 ├── qa-reports/                   # Automated audit telemetry and test reports
 │   ├── audit_data.json           # Raw performance, viewport, and contrast metrics
-│   └── PRODUCTION_READINESS_REPORT.md # 18-phase comprehensive QA audit report
+│   └── PRODUCTION_READINESS_REPORT.md # Comprehensive QA audit report
 ├── src/
 │   ├── app/
 │   │   └── App.tsx               # Main single-page application layout root
@@ -205,6 +277,7 @@ DealEsate/
 │   │   └── ui/
 │   │       ├── Accordion.tsx     # Accessible FAQ collapse/expand component
 │   │       ├── Button.tsx        # Standardized button variants (primary, secondary, outline)
+│   │       ├── CustomCursor.tsx  # Antique-gold custom cursor with touch/idle optimizations
 │   │       ├── SectionContainer.tsx # Max-width wrapper enforcing layout bounds
 │   │       └── SectionHeading.tsx# Section eyebrow, title, and subtitle block
 │   ├── data/                     # Centralized content and business configuration
@@ -220,7 +293,7 @@ DealEsate/
 │   │   ├── useActiveSection.ts   # IntersectionObserver hook for navbar tracking
 │   │   └── useReducedMotion.ts   # Accessibility hook respecting OS animation preferences
 │   ├── lib/
-│   │   └── contact.ts            # FormSubmit & Web3Forms dispatch integration
+│   │   └── contact.ts            # FormSubmit AJAX dispatch integration
 │   ├── sections/
 │   │   ├── Audience/             # Who We Serve section
 │   │   ├── Contact/              # Contact info & Lead inquiry form
@@ -273,7 +346,7 @@ Ensure you have the following installed locally:
    ```
 
 3. **Configure environment variables**:
-   Create a local `.env` file based on the example:
+   Create a local `.env` file based on `.env.example`:
    ```bash
    cp .env.example .env
    ```
@@ -303,20 +376,21 @@ The application uses Vite environment variables prefixed with `VITE_`. All sensi
 | `VITE_WEB3FORMS_ACCESS_KEY` | Optional | *None* | Web3Forms access key if using Web3Forms as the form provider. |
 
 ### Pre-Launch Activation Notice
-> **Important**: When using FormSubmit for the first time, FormSubmit sends an activation email to `codnexa@gmail.com`. The recipient must confirm the activation link to enable inbox delivery. The form includes graceful fallback actions to direct phone and WhatsApp channels at all times.
+> **Important**: When using FormSubmit for the first time on a new domain, FormSubmit sends an activation email to `codnexa@gmail.com`. The recipient must confirm the activation link to enable inbox delivery. The website automatically handles AJAX submissions and presents inline confirmation without full-page redirection.
 
 ---
 
 ## 🎨 Design System & Palette
 
 The visual identity is defined in `src/styles/tokens.css` and strictly adheres to the approved Dealestate color distribution:
-- **65% Dominant Light Surfaces**: Warm Ivory (`#F7F3EA`) and White (`#FFFFFF`).
-- **25% High-Impact Dark Surfaces**: Deep Navy (`#102B4E`) and Dark Navy (`#07152E`).
+- **65% Dominant Light Surfaces**: Warm Ivory (`#F7F3EA`), White (`#FFFFFF`), and Soft Blue (`#EAF1F8`).
+- **25% High-Impact Dark Surfaces**: Deep Navy (`#102B4E`) and Dark Navy (`#08172B`).
 - **10% Accent Highlights & CTAs**: Premium Gold (`#D9A323`).
 
 | Token | Hex Code | Swatch | Recommended Usage |
 |---|:---:|:---:|---|
 | **Deep Navy** | `#102B4E` | `■` | Primary dark surface, navbar, footer, contact section |
+| **Dark Navy** | `#08172B` | `■` | Hero backdrop, lead allocation desk, high-impact surfaces |
 | **Warm Ivory** | `#F7F3EA` | `■` | Dominant light surface, owner leads, why dealestate |
 | **White** | `#FFFFFF` | `■` | Card backgrounds, elevated surfaces |
 | **Premium Gold** | `#D9A323` | `■` | Primary CTAs, active pills, badges, highlights |
@@ -358,7 +432,13 @@ The website was audited using Google Chrome DevTools and Google Lighthouse. Resu
   - Owner Leads, Human Support, 7 Growth Solutions, 7-Stage Process Pipeline, Audience, Why Dealestate, FAQ, and Footer.
 - [x] **Phase 3: Integrations & Production Readiness**
   - FormSubmit AJAX integration, SEO structured data, Open Graph cards, sitemap, robots.txt, and zero-defect QA audit.
-- [ ] **Phase 4: Client Portal & Live Feed (Future Milestone)**
+- [x] **Phase 4: UI/UX Refinements & Brand Identity Alignment**
+  - Solutions section balanced color rhythm (Warm Ivory, Soft Blue, Deep Navy).
+  - Commercial Owner single-line badge formatting.
+  - Dealestate geometric logo browser tab favicon.
+  - Antique-gold custom cursor with touch pointer rejection and stationary RAF halting.
+  - FormSubmit inline confirmation without browser redirect.
+- [ ] **Phase 5: Client Portal & Live Feed (Future Milestone)**
   - Authenticated broker dashboard with real-time WhatsApp webhook delivery and CRM synchronization.
 
 ---
