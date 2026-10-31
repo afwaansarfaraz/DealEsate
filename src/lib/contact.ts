@@ -142,7 +142,27 @@ export async function submitContactForm(
       };
     }
 
-    const errorJson = (await response.json().catch(() => null)) as { message?: string } | null;
+    const errorJson = (await response.json().catch(() => null)) as {
+      message?: string;
+      success?: boolean | string;
+    } | null;
+
+    const isErrorActivationNotice = Boolean(
+      errorJson?.message && errorJson.message.toLowerCase().includes('activation')
+    );
+
+    if (isErrorActivationNotice) {
+      console.warn(
+        '[Dealestate FormSubmit] The form endpoint requires email confirmation. Click the activation link sent to codnexa@gmail.com to enable direct mailbox delivery.'
+      );
+      return {
+        success: false,
+        isConfigured: true,
+        message:
+          'Your enquiry could not be submitted at this time. Please connect with our team directly via phone or WhatsApp.',
+      };
+    }
+
     return {
       success: false,
       isConfigured: true,
