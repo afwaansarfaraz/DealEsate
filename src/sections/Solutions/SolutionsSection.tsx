@@ -96,3 +96,4 @@ export const SolutionsSection: React.FC = () => {
     </section>
   );
 };
+

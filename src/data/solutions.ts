@@ -87,3 +87,4 @@ export const solutionsData: SolutionItem[] = [
     icon: 'TrendingUp',
   },
 ];
+

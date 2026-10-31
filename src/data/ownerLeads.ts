@@ -59,3 +59,4 @@ export const ownerLeadCategories: OwnerLeadCategory[] = [
     icon: 'Building2',
   },
 ];
+

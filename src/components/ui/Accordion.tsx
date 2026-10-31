@@ -56,3 +56,4 @@ export const Accordion: React.FC<AccordionProps> = ({ items, className }) => {
     </div>
   );
 };
+

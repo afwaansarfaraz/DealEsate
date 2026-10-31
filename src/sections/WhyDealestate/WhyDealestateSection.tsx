@@ -56,3 +56,4 @@ export const WhyDealestateSection: React.FC = () => {
     </section>
   );
 };
+

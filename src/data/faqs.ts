@@ -56,3 +56,4 @@ export const faqsData: FAQItem[] = [
       'No. Dealestate provides verified owner opportunities and operational sales support; we never guarantee a closed sale, rental commission, or specific conversion rate. Final deal outcomes depend on market pricing, property condition, your local negotiation expertise, and rapid client follow-up.',
   },
 ];
+
