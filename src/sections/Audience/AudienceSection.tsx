@@ -36,7 +36,7 @@ export const AudienceSection: React.FC = () => {
                     <span className="p-3 rounded-xl bg-navy-900 text-white group-hover:bg-gold-deep transition-colors">
                       <IconComponent className="w-5 h-5" />
                     </span>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-700 bg-slate-100 px-3 py-1 rounded-full">
                       {item.badge}
                     </span>
                   </div>
@@ -56,7 +56,7 @@ export const AudienceSection: React.FC = () => {
                   </div>
 
                   <div className="space-y-2.5 pt-4 border-t border-slate-100 mb-6">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-600">
                       Key Practical Benefits:
                     </p>
                     {item.benefits.map((b, idx) => (

@@ -1,0 +1,19 @@
+# Dealestate — Real Estate Growth System
+
+> India's first human-led, AI-powered real estate growth system, powered by Codnexa.
+
+Dealestate equips Indian real estate brokers, independent consultants, and multi-agent agencies with verified property-owner leads (Rental, Resale, Commercial), dedicated human sales support desks, and AI-assisted workflow tools.
+
+## Core Capabilities
+- **Property Owner Lead Generation**: Filtered residential rental, resale, and commercial owner opportunities.
+- **1 Client : 1 Lead Exclusivity**: Strict single-broker allocation lock per micro-market and pin code.
+- **Dedicated Human Sales Support**: Trained callers handling discovery outreach, intent qualification, and appointment coordination.
+- **AI-Assisted Listing Screening**: Algorithmic deduplication and listing validity checks.
+- **AI Property Marketing Videos**: Vertical video reels created for WhatsApp and social engagement.
+- **CRM and WhatsApp Automation**: Consent-based instant response and pipeline tracking.
+
+## Contact Information
+- **Phone / WhatsApp**: +91 63946 23162
+- **Email**: codnexa@gmail.com
+- **Website**: https://www.codnexa.co.in
+- **Headquarters**: Lucknow, Uttar Pradesh, India

@@ -7,10 +7,11 @@ export interface NavigationItem {
 
 export interface SiteConfig {
   brandName: string;
+  parentCompany?: string;
+  parentWebsite?: string;
   positioning: string;
   tagline: string;
   subheadline: string;
-  // Contact details are strictly empty placeholders until owner provides them
   contact: {
     whatsappNumber: string;
     phone: string;
@@ -39,4 +40,3 @@ export interface TrustPillar {
   description: string;
   iconName: string;
 }
-

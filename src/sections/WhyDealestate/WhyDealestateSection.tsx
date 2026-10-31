@@ -98,7 +98,7 @@ export const WhyDealestateSection: React.FC = () => {
                     <span className="p-2.5 rounded-xl bg-soft-blue text-navy-900 border border-slate-200 group-hover:bg-gold/15 group-hover:text-gold-deep transition-colors">
                       <IconComponent className="w-4 h-4" />
                     </span>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-600">
                       {adv.eyebrow}
                     </span>
                   </div>

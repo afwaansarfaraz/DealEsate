@@ -27,7 +27,7 @@ export default {
         gold: {
           DEFAULT: '#D9A323',
           hover: '#BE8E1B',
-          deep: '#A07510',
+          deep: '#724F00',
           light: '#FDF3D8',
           muted: '#C4921E',
           glow: 'rgba(217, 163, 35, 0.25)',

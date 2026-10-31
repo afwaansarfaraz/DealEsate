@@ -3,15 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dealestate | India’s Human-Led, AI-Powered Real Estate Growth System</title>
+    <title>Dealestate | India’s First Human-Led, AI-Powered Real Estate Growth System</title>
+    
+    <!-- Primary SEO Metadata -->
     <meta
       name="description"
-      content="Get verified property-owner leads (Rental, Resale, Commercial) with dedicated human sales support and AI-assisted workflows for Indian brokers and real estate agencies."
+      content="Get verified residential and commercial property-owner leads with dedicated human sales support and AI-assisted screening for Indian real estate brokers and agencies."
     />
+    <meta
+      name="keywords"
+      content="real estate leads, property owner leads, rental owner leads, resale owner leads, commercial property leads, human sales support, real estate CRM, Indian real estate growth system, Lucknow brokers, Codnexa"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Codnexa" />
+    <meta name="theme-color" content="#102B4E" />
+    <link rel="canonical" href="https://dealestate.in/" />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dealestate.in/" />
+    <meta property="og:title" content="Dealestate | India’s First Human-Led, AI-Powered Real Estate Growth System" />
+    <meta
+      property="og:description"
+      content="Verified property-owner leads (Rental, Resale, Commercial) with dedicated human sales specialists and AI-assisted workflows. Strict 1 Client : 1 Lead exclusivity."
+    />
+    <meta property="og:image" content="https://dealestate.in/assets/hero/mumbai-skyline-desktop.webp" />
+    <meta property="og:site_name" content="Dealestate" />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://dealestate.in/" />
+    <meta name="twitter:title" content="Dealestate | India’s First Human-Led, AI-Powered Real Estate Growth System" />
+    <meta
+      name="twitter:description"
+      content="More Than Leads. A Complete Growth System. Verified property-owner leads with dedicated human sales support."
+    />
+    <meta name="twitter:image" content="https://dealestate.in/assets/hero/mumbai-skyline-desktop.webp" />
+
+    <!-- Favicons -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="alternate icon" href="/favicon.ico" />
 
-    <!-- Google Fonts Preconnect & Stylesheet -->
+    <!-- Google Fonts Preconnect & Optimized Stylesheet -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,7 +53,7 @@
       rel="stylesheet"
     />
 
-    <!-- Preload Hero Image for High-Priority First Paint -->
+    <!-- Preload Critical Hero Image for High-Priority First Paint -->
     <link
       rel="preload"
       as="image"
@@ -36,10 +70,92 @@
       media="(max-width: 767px)"
       fetchpriority="high"
     />
+
+    <!-- JSON-LD Structured Data Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://dealestate.in/#organization",
+            "name": "Dealestate",
+            "url": "https://dealestate.in/",
+            "logo": "https://dealestate.in/assets/brand/dealestate-logo.png",
+            "description": "India’s First Human-Led, AI-Powered Real Estate Growth System powered by Codnexa.",
+            "parentOrganization": {
+              "@type": "Organization",
+              "name": "Codnexa",
+              "url": "https://www.codnexa.co.in"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+91-63946-23162",
+              "contactType": "sales",
+              "areaServed": "IN",
+              "availableLanguage": ["English", "Hindi"]
+            },
+            "sameAs": [
+              "https://www.linkedin.com/company/codnexa/",
+              "https://www.instagram.com/codnexa",
+              "https://www.codnexa.co.in"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://dealestate.in/#website",
+            "url": "https://dealestate.in/",
+            "name": "Dealestate",
+            "description": "More Than Leads. A Complete Growth System for Indian Real Estate Professionals.",
+            "publisher": {
+              "@id": "https://dealestate.in/#organization"
+            }
+          },
+          {
+            "@type": "Service",
+            "@id": "https://dealestate.in/#service",
+            "serviceType": "Real Estate Growth System & Verified Owner Lead Generation",
+            "provider": {
+              "@id": "https://dealestate.in/#organization"
+            },
+            "areaServed": {
+              "@type": "AdministrativeArea",
+              "name": "India"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Owner Lead Offerings",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Rental Owner Leads"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Resale Owner Leads"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Commercial Owner Leads"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    </script>
   </head>
-  <body class="bg-dark-bg text-text-primary font-sans antialiased selection:bg-gold/30 selection:text-gold-light min-h-screen">
+  <body class="bg-ivory text-charcoal font-sans antialiased selection:bg-gold/30 selection:text-gold-deep min-h-screen">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

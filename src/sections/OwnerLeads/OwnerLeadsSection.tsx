@@ -56,7 +56,7 @@ export const OwnerLeadsSection: React.FC = () => {
 
                   {/* Checklist of Features */}
                   <div className="pt-5 border-t border-border-light space-y-2.5 mb-6">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-600">
                       What is included:
                     </p>
                     {category.features.map((feature, idx) => (
@@ -70,8 +70,8 @@ export const OwnerLeadsSection: React.FC = () => {
 
                 {/* Bottom Action */}
                 <div className="pt-4 border-t border-border-light">
-                  <div className="mb-4 text-xs text-slate-500 font-medium">
-                    <span className="text-slate-400">Target Audience:</span> {category.idealFor}
+                  <div className="mb-4 text-xs text-slate-600 font-medium">
+                    <span className="text-slate-600 font-bold">Target Audience:</span> {category.idealFor}
                   </div>
                   <Button
                     href="#contact"

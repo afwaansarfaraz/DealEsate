@@ -17,7 +17,7 @@ export const FAQSection: React.FC = () => {
 
         <Accordion items={faqsData} />
 
-        <div className="mt-12 text-center text-xs sm:text-sm text-slate-500">
+        <div className="mt-12 text-center text-xs sm:text-sm text-slate-700 font-medium">
           Have a question not addressed here?{' '}
           <a href="#contact" className="text-gold-deep font-semibold hover:underline">
             Reach out through our enquiry form below.

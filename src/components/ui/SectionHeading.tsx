@@ -35,10 +35,10 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
     <div className={twMerge(clsx('flex flex-col mb-10 sm:mb-14', alignClasses[align], className))}>
       {eyebrow && (
         <div
-          className={`inline-flex items-center gap-2 px-3.5 py-1 mb-3.5 rounded-full text-xs font-semibold tracking-wider uppercase border ${
+          className={`inline-flex items-center gap-2 px-3.5 py-1 mb-3.5 rounded-full text-xs font-bold tracking-wider uppercase border ${
             isDark
-              ? 'text-gold-light bg-gold/10 border-gold/30'
-              : 'text-gold-deep bg-gold/10 border-gold/30'
+              ? 'text-gold-light bg-gold/15 border-gold/40'
+              : 'text-navy-950 bg-amber-100/90 border-gold/50 shadow-xs'
           }`}
         >
           <span className={`w-1.5 h-1.5 rounded-full ${isDark ? 'bg-gold-light' : 'bg-gold-deep'}`} />
@@ -47,7 +47,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       )}
       <h2
         className={twMerge(
-          clsx(
+            clsx(
             'font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold tracking-tight leading-[1.2]',
             isDark ? 'text-white' : 'text-navy-900',
             titleClassName
@@ -60,7 +60,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
         <p
           className={twMerge(
             clsx(
-              'mt-3 sm:mt-4 text-sm sm:text-base md:text-lg max-w-2xl font-normal leading-relaxed',
+              'mt-3.5 sm:mt-4 text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed',
               isDark ? 'text-slate-300' : 'text-slate-600',
               subtitleClassName
             )

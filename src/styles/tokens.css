@@ -1,50 +1,40 @@
+/**
+ * DEALESTATE DESIGN TOKENS
+ * 
+ * Palette:
+ * - Deep Navy: #102B4E (25% surfaces: Navbar, Hero, Human Support, Contact, Footer)
+ * - Warm Ivory: #F7F3EA (65% dominant light surfaces: Owner Leads, How It Works, Why Dealestate)
+ * - Soft Blue: #EAF1F8 (Alternate light sections: Solutions, Audience, FAQ)
+ * - Pure White: #FFFFFF (Cards, surfaces)
+ * - Premium Gold: #D9A323 (10% accents: CTAs, active highlights)
+ * - Dark Charcoal: #172B4D (Headings, primary body text)
+ * - Muted Slate: #64748B (Secondary text, subtitles)
+ * - Light Border: #E5E7EB (Dividers, borders)
+ */
+
 :root {
-  /* Brand Core Colors - Updated Blueprint Palette */
+  /* Surfaces */
   --color-navy: #102B4E;
-  --color-navy-dark: #0D223E;
-  --color-navy-deep: #08172B;
-  --color-navy-surface: #14355E;
+  --color-navy-surface: #0B223D;
+  --color-navy-dark: #07152E;
+  --color-ivory: #F7F3EA;
+  --color-soft-blue: #EAF1F8;
+  --color-white: #FFFFFF;
 
-  /* Premium Gold Accent */
+  /* Accent Colors */
   --color-gold: #D9A323;
-  --color-gold-hover: #BE8E1B;
-  --color-gold-deep: #A07510;
-  --color-gold-light: #FDF3D8;
-  --color-gold-glow: rgba(217, 163, 35, 0.25);
+  --color-gold-light: #E8BE52;
+  --color-gold-deep: #7a5200;
+  --color-gold-hover: #C5911B;
 
-  /* Dominant Light Surfaces */
-  --color-surface-ivory: #F7F3EA;
-  --color-surface-white: #FFFFFF;
+  /* Typography Colors */
+  --color-charcoal: #172B4D;
+  --color-slate-muted: #52627a;
+  --color-slate-subtle: #64748B;
   --color-border-light: #E5E7EB;
 
-  /* Soft Blue Alternate Surfaces */
-  --color-surface-soft-blue: #EAF1F8;
-  --color-surface-soft-blue-alt: #DEEAF4;
-  --color-border-soft-blue: #CFE0EF;
-
-  /* High-Impact Dark Surfaces */
-  --color-dark-bg: #102B4E;
-  --color-dark-surface: #14355E;
-  --color-dark-card: #173D6C;
-  --color-dark-border: rgba(255, 255, 255, 0.12);
-
-  /* Typography Colors - Light Surfaces */
-  --color-text-navy: #102B4E;
-  --color-text-charcoal: #172B4D;
-  --color-text-body: #334155;
-  --color-text-muted: #64748B;
-
-  /* Typography Colors - Dark High-Impact Surfaces */
-  --color-text-dark-primary: #FFFFFF;
-  --color-text-dark-secondary: #E2E8F0;
-  --color-text-dark-muted: #94A3B8;
-
-  /* Layout */
-  --header-height: 70px;
-  --header-height-mobile: 64px;
-
-  /* Transitions */
-  --transition-fast: 150ms ease-out;
-  --transition-normal: 220ms ease-out;
-  --transition-slow: 400ms ease-out;
+  /* Shadows */
+  --shadow-card-light: 0 4px 20px -2px rgba(16, 43, 78, 0.06), 0 2px 6px -1px rgba(16, 43, 78, 0.04);
+  --shadow-card-hover: 0 12px 28px -4px rgba(16, 43, 78, 0.12), 0 4px 10px -2px rgba(16, 43, 78, 0.06);
+  --shadow-card-dark: 0 8px 30px rgba(0, 0, 0, 0.4);
 }

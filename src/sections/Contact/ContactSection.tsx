@@ -1,9 +1,31 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2, MessageSquare, AlertCircle, AlertTriangle, ShieldCheck } from 'lucide-react';
+import {
+  Send,
+  CheckCircle2,
+  MessageSquare,
+  AlertCircle,
+  AlertTriangle,
+  ShieldCheck,
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  ExternalLink,
+  Linkedin,
+  Instagram,
+  Globe,
+} from 'lucide-react';
 import { SectionContainer } from '../../components/ui/SectionContainer';
 import { SectionHeading } from '../../components/ui/SectionHeading';
 import { Button } from '../../components/ui/Button';
-import { siteConfig, hasWhatsAppContact } from '../../data/siteConfig';
+import {
+  siteConfig,
+  hasWhatsAppContact,
+  hasPhoneContact,
+  hasEmailContact,
+  hasLinkedInContact,
+  hasInstagramContact,
+} from '../../data/siteConfig';
 import { submitContactForm, isContactFormConfigured, ContactFormData } from '../../lib/contact';
 
 export const ContactSection: React.FC = () => {
@@ -89,7 +111,7 @@ export const ContactSection: React.FC = () => {
 
     if (!validate()) {
       setStatus('error');
-      setStatusMessage('Please fix the highlighted errors before submitting.');
+      setStatusMessage('Please correct the highlighted errors before submitting.');
       return;
     }
 
@@ -97,7 +119,7 @@ export const ContactSection: React.FC = () => {
     if (!isContactFormConfigured()) {
       setStatus('unconfigured');
       setStatusMessage(
-        'The form submission endpoint has not yet been connected. To activate live form submissions, configure VITE_FORM_ENDPOINT or VITE_WEB3FORMS_ACCESS_KEY in your environment configuration.'
+        'The online enquiry endpoint is currently unconfigured. Set VITE_FORM_ENDPOINT or VITE_WEB3FORMS_ACCESS_KEY in your environment to enable automated submissions. In the meantime, please connect directly via WhatsApp, phone, or email below.'
       );
       return;
     }
@@ -120,6 +142,7 @@ export const ContactSection: React.FC = () => {
   };
 
   const whatsAppAvailable = hasWhatsAppContact(siteConfig);
+  const cleanPhoneLink = siteConfig.contact.phone.replace(/[\s\-\(\)]/g, '');
 
   return (
     <section id="contact" className="bg-navy py-20 sm:py-28 text-white relative overflow-hidden border-t border-navy-800">
@@ -138,7 +161,7 @@ export const ContactSection: React.FC = () => {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 max-w-5xl mx-auto">
-          {/* Left Column: Context & WhatsApp */}
+          {/* Left Column: Direct Contacts & Exclusivity Guarantee */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
             <div>
               <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mb-3">
@@ -165,8 +188,103 @@ export const ContactSection: React.FC = () => {
                   <span className="w-5 h-5 rounded-full bg-gold/20 text-gold-light flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
                     ✓
                   </span>
-                  <span>Primary focus markets: Lucknow &amp; selected key Indian metro corridors.</span>
+                  <span>Initial focus market: Lucknow &amp; key Indian metros.</span>
                 </div>
+              </div>
+            </div>
+
+            {/* Direct Official Communication Channels */}
+            <div className="p-5 rounded-2xl bg-navy-900 border border-white/10 space-y-3.5">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-gold-light mb-1">
+                Direct Contact Channels
+              </h4>
+
+              {/* Phone Link */}
+              {hasPhoneContact(siteConfig) && (
+                <a
+                  href={`tel:${cleanPhoneLink}`}
+                  className="flex items-center justify-between p-3 rounded-xl bg-navy-950/70 border border-white/10 hover:border-gold/50 text-slate-200 hover:text-white transition-all group"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="p-2 rounded-lg bg-gold/15 text-gold-light group-hover:scale-105 transition-transform">
+                      <Phone className="w-4 h-4" />
+                    </span>
+                    <div>
+                      <span className="text-[11px] font-medium text-slate-400 block">Direct Telephone</span>
+                      <span className="text-sm font-semibold">{siteConfig.contact.phone}</span>
+                    </div>
+                  </div>
+                  <span className="text-xs text-gold-light font-medium group-hover:underline">Call Now</span>
+                </a>
+              )}
+
+              {/* Email Link */}
+              {hasEmailContact(siteConfig) && (
+                <a
+                  href={`mailto:${siteConfig.contact.email}`}
+                  className="flex items-center justify-between p-3 rounded-xl bg-navy-950/70 border border-white/10 hover:border-gold/50 text-slate-200 hover:text-white transition-all group"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="p-2 rounded-lg bg-gold/15 text-gold-light group-hover:scale-105 transition-transform">
+                      <Mail className="w-4 h-4" />
+                    </span>
+                    <div>
+                      <span className="text-[11px] font-medium text-slate-400 block">Email Desk</span>
+                      <span className="text-sm font-semibold">{siteConfig.contact.email}</span>
+                    </div>
+                  </div>
+                  <span className="text-xs text-gold-light font-medium group-hover:underline">Send Email</span>
+                </a>
+              )}
+
+              {/* Location & Hours */}
+              <div className="pt-2 border-t border-white/10 space-y-1.5 text-xs text-slate-400">
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-3.5 h-3.5 text-gold-light shrink-0" />
+                  <span>{siteConfig.contact.address}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="w-3.5 h-3.5 text-gold-light shrink-0" />
+                  <span>{siteConfig.contact.operatingHours}</span>
+                </div>
+              </div>
+
+              {/* Social Channels Row */}
+              <div className="flex items-center gap-2 pt-2 border-t border-white/10">
+                <span className="text-[11px] text-slate-400 font-medium">Follow &amp; Verify:</span>
+                {hasLinkedInContact(siteConfig) && (
+                  <a
+                    href={siteConfig.social.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Codnexa LinkedIn Profile"
+                    className="p-1.5 rounded-lg bg-navy-950 border border-white/10 hover:border-gold/40 text-slate-300 hover:text-gold-light transition-colors"
+                  >
+                    <Linkedin className="w-3.5 h-3.5" />
+                  </a>
+                )}
+                {hasInstagramContact(siteConfig) && (
+                  <a
+                    href={siteConfig.social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Codnexa Instagram Profile"
+                    className="p-1.5 rounded-lg bg-navy-950 border border-white/10 hover:border-gold/40 text-slate-300 hover:text-gold-light transition-colors"
+                  >
+                    <Instagram className="w-3.5 h-3.5" />
+                  </a>
+                )}
+                {siteConfig.parentWebsite && (
+                  <a
+                    href={siteConfig.parentWebsite}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Codnexa Official Website"
+                    className="p-1.5 rounded-lg bg-navy-950 border border-white/10 hover:border-gold/40 text-slate-300 hover:text-gold-light transition-colors"
+                  >
+                    <Globe className="w-3.5 h-3.5" />
+                  </a>
+                )}
               </div>
             </div>
 
@@ -179,19 +297,20 @@ export const ContactSection: React.FC = () => {
                 <h4 className="text-sm font-semibold text-white">Prefer WhatsApp?</h4>
               </div>
               <p className="text-xs text-slate-400 mb-3.5 leading-relaxed">
-                {whatsAppAvailable
-                  ? 'Connect directly with our onboarding coordinator via verified WhatsApp.'
-                  : 'Official business WhatsApp channel will be activated upon launch. Please submit the inquiry form.'}
+                Connect directly with our onboarding coordinator via verified business WhatsApp chat.
               </p>
               {whatsAppAvailable ? (
                 <Button
                   href={`https://wa.me/${siteConfig.contact.whatsappNumber}?text=Hi%20Dealestate%2C%20I%20am%20interested%20in%20verified%20owner%20leads.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   variant="outline"
                   fullWidth
                   size="sm"
-                  className="bg-emerald-950/40 border-emerald-700/60 text-emerald-300 hover:bg-emerald-900/60"
+                  className="bg-emerald-950/40 border-emerald-700/60 text-emerald-300 hover:bg-emerald-900/60 hover:text-emerald-100"
+                  iconRight={<ExternalLink className="w-3.5 h-3.5" />}
                 >
-                  Message on WhatsApp
+                  Start WhatsApp Chat
                 </Button>
               ) : (
                 <button
@@ -258,9 +377,29 @@ export const ContactSection: React.FC = () => {
                       <AlertTriangle className="w-4 h-4 shrink-0 text-amber-400 mt-0.5" />
                       <div>
                         <strong className="block font-semibold mb-0.5 text-amber-300">
-                          Integration Pending Configuration:
+                          Integration Configuration Pending:
                         </strong>
-                        <span>{statusMessage}</span>
+                        <span className="leading-relaxed block mb-2">{statusMessage}</span>
+                        <div className="flex flex-wrap gap-2 pt-1 border-t border-amber-600/30">
+                          {hasPhoneContact(siteConfig) && (
+                            <a
+                              href={`tel:${cleanPhoneLink}`}
+                              className="inline-flex items-center gap-1 font-semibold text-gold-light hover:underline"
+                            >
+                              <Phone className="w-3 h-3" /> Call: {siteConfig.contact.phone}
+                            </a>
+                          )}
+                          {hasWhatsAppContact(siteConfig) && (
+                            <a
+                              href={`https://wa.me/${siteConfig.contact.whatsappNumber}?text=Hi%20Dealestate%2C%20I%20am%20interested%20in%20verified%20owner%20leads.`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 font-semibold text-emerald-400 hover:underline"
+                            >
+                              <MessageSquare className="w-3 h-3" /> WhatsApp
+                            </a>
+                          )}
+                        </div>
                       </div>
                     </div>
                   )}
@@ -442,7 +581,7 @@ export const ContactSection: React.FC = () => {
                   {/* Additional Requirements */}
                   <div>
                     <label htmlFor="additionalRequirements" className="block text-xs font-medium text-slate-300 mb-1.5">
-                      Additional Requirements <span className="text-slate-500 font-normal">(Optional)</span>
+                      Additional Requirements <span className="text-slate-400 font-normal">(Optional)</span>
                     </label>
                     <textarea
                       id="additionalRequirements"

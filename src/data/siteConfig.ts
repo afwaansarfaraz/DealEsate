@@ -3,44 +3,49 @@ import { SiteConfig } from '../types/content';
 /**
  * Centralized Site Configuration
  * 
- * NOTE ON CONTACT DETAILS:
- * Per blueprint and client instructions, no dummy contact details are used.
- * Fields remain empty strings until officially confirmed and provided by the owner.
- * UI components must check helper methods to hide or safely disable contact triggers.
+ * Source of truth: Dealestate Complete Business Profile & Codnexa Official Business Information
+ * - Brand: Dealestate (Powered by Codnexa)
+ * - Phone / WhatsApp: +91 63946 23162
+ * - Email: codnexa@gmail.com
+ * - Headquarters: Lucknow, Uttar Pradesh, India
+ * - Website: https://www.codnexa.co.in
+ * - Social: LinkedIn, Instagram
  */
 export const siteConfig: SiteConfig = {
   brandName: 'Dealestate',
+  parentCompany: 'Codnexa',
+  parentWebsite: 'https://www.codnexa.co.in',
   positioning: "India’s First Human-Led, AI-Powered Real Estate Growth System",
   tagline: 'More Than Leads. A Complete Growth System.',
   subheadline:
     'Get relevant property-owner leads, dedicated human sales support, and AI-powered tools that help your real-estate business manage opportunities more effectively.',
   
-  // Official contact channels - empty until provided by owner
+  // Official contact channels extracted from Business Profile & Codnexa
   contact: {
-    whatsappNumber: '', // OWNER TO CONFIRM (e.g. '919876543210')
-    phone: '',          // OWNER TO CONFIRM
-    email: '',          // OWNER TO CONFIRM (e.g. 'contact@dealestate.in')
-    address: '',        // OWNER TO CONFIRM
-    operatingHours: '',  // OWNER TO CONFIRM
+    whatsappNumber: '916394623162',
+    phone: '+91 63946 23162',
+    email: 'codnexa@gmail.com',
+    address: 'Lucknow, Uttar Pradesh, India',
+    operatingHours: 'Mon - Sat: 9:30 AM - 7:00 PM IST',
   },
 
-  // Social media profile URLs - empty until provided by owner
+  // Official social media profiles
   social: {
-    linkedin: '',       // OWNER TO CONFIRM
-    twitter: '',        // OWNER TO CONFIRM
-    instagram: '',      // OWNER TO CONFIRM
-    facebook: '',       // OWNER TO CONFIRM
+    linkedin: 'https://www.linkedin.com/company/codnexa/',
+    instagram: 'https://www.instagram.com/codnexa',
+    twitter: '', // Empty: hidden in UI
+    facebook: '', // Empty: hidden in UI
   },
 
   // Hosted form provider endpoint
   form: {
-    providerEndpoint: '', // OWNER TO CONFIGURE (e.g. Web3Forms / Formspree endpoint)
+    providerEndpoint: '',
   },
 
   // Legal documentation links
   legal: {
-    privacyPolicyUrl: '#', // OWNER TO APPROVE
-    termsUrl: '#',          // OWNER TO APPROVE
+    privacyPolicyUrl: '#',
+    termsUrl: '#',
   },
 };
 
@@ -54,6 +59,11 @@ export const hasPhoneContact = (config: SiteConfig = siteConfig): boolean =>
 export const hasEmailContact = (config: SiteConfig = siteConfig): boolean =>
   Boolean(config.contact.email && config.contact.email.trim().length > 0);
 
+export const hasLinkedInContact = (config: SiteConfig = siteConfig): boolean =>
+  Boolean(config.social.linkedin && config.social.linkedin.trim().length > 0);
+
+export const hasInstagramContact = (config: SiteConfig = siteConfig): boolean =>
+  Boolean(config.social.instagram && config.social.instagram.trim().length > 0);
+
 export const hasSocialLinks = (config: SiteConfig = siteConfig): boolean =>
   Object.values(config.social).some((url) => Boolean(url && url.trim().length > 0));
-

@@ -7,6 +7,8 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   size?: 'sm' | 'md' | 'lg';
   fullWidth?: boolean;
   href?: string;
+  target?: string;
+  rel?: string;
   iconRight?: React.ReactNode;
   iconLeft?: React.ReactNode;
 }
@@ -20,6 +22,8 @@ export const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, Bu
       size = 'md',
       fullWidth = false,
       href,
+      target,
+      rel,
       iconRight,
       iconLeft,
       disabled,
@@ -61,6 +65,8 @@ export const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, Bu
       return (
         <a
           href={href}
+          target={target}
+          rel={rel}
           className={mergedClasses}
           ref={ref as React.Ref<HTMLAnchorElement>}
           aria-disabled={disabled}

@@ -56,7 +56,7 @@ export const SolutionsSection: React.FC = () => {
                       <span className="p-3 rounded-xl bg-soft-blue text-navy-800 border border-slate-200 group-hover:bg-gold/15 group-hover:text-gold-deep group-hover:border-gold/30 transition-colors">
                         <IconComponent className="w-5 h-5" />
                       </span>
-                      <span className="text-xs font-bold text-navy-900/60 font-mono">
+                      <span className="text-xs font-bold text-navy-900/80 font-mono">
                         0{idx + 1}
                       </span>
                     </div>
@@ -67,7 +67,7 @@ export const SolutionsSection: React.FC = () => {
                           Optional Add-On
                         </span>
                       )}
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-slate-600">
                         {item.eyebrow}
                       </span>
                     </div>
