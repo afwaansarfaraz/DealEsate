@@ -339,11 +339,11 @@ export const ContactSection: React.FC = () => {
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h3 className="text-xl font-bold text-white font-serif">
-                    Enquiry Received
+                    Your enquiry has been submitted successfully!
                   </h3>
                   <p className="text-sm text-slate-200 max-w-md mx-auto leading-relaxed font-medium">
                     {statusMessage ||
-                      'Your enquiry has been submitted successfully! Our team will get back to you soon.'}
+                      'Thank you for contacting Dealestate. Our team will get back to you soon.'}
                   </p>
                   <Button
                     onClick={() => {

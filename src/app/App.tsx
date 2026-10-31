@@ -1,4 +1,5 @@
 import React from 'react';
+import { CustomCursor } from '../components/ui/CustomCursor';
 import { SiteHeader } from '../components/layout/SiteHeader';
 import { HeroSection } from '../sections/HeroSection/HeroSection';
 import { OwnerLeadsSection } from '../sections/OwnerLeads/OwnerLeadsSection';
@@ -14,6 +15,9 @@ import { SiteFooter } from '../components/layout/SiteFooter';
 export const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-ivory text-text-charcoal flex flex-col antialiased selection:bg-gold/30 selection:text-gold-deep">
+      {/* Premium Desktop Mouse Cursor Accent */}
+      <CustomCursor />
+
       {/* Top Anchor */}
       <div id="top" className="sr-only" />
 

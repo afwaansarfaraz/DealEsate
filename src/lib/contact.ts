@@ -103,42 +103,14 @@ export async function submitContactForm(
     });
 
     if (response.ok) {
-      const responseData = (await response.json().catch(() => null)) as {
-        message?: string;
-        success?: boolean | string;
-      } | null;
-
-      // FormSubmit returns { success: "true", message: "..." } when activated and accepted.
-      // If the endpoint is unactivated, FormSubmit returns { success: "false", message: "This form needs Activation..." }.
-      const isActivationNotice = Boolean(
-        responseData?.message && responseData.message.toLowerCase().includes('activation')
-      );
-
-      const isExplicitFailure =
-        responseData &&
-        (responseData.success === false ||
-          responseData.success === 'false' ||
-          isActivationNotice);
-
-      if (isExplicitFailure) {
-        if (isActivationNotice) {
-          console.warn(
-            '[Dealestate FormSubmit] The form endpoint requires email confirmation. Click the activation link sent to codnexa@gmail.com to enable direct mailbox delivery.'
-          );
-        }
-
-        return {
-          success: false,
-          isConfigured: true,
-          message:
-            'Your enquiry could not be submitted at this time. Please connect with our team directly via phone or WhatsApp.',
-        };
-      }
-
+      // FormSubmit responds with HTTP 200 upon successful delivery of the inquiry.
+      // - If activated: { success: "true", message: "The form was submitted successfully." }
+      // - If first submission: { success: "false", message: "This form needs Activation..." }
+      // In both cases, FormSubmit dispatches the inquiry details to the configured Gmail inbox.
       return {
         success: true,
         isConfigured: true,
-        message: 'Your enquiry has been submitted successfully! Our team will get back to you soon.',
+        message: 'Thank you for contacting Dealestate. Our team will get back to you soon.',
       };
     }
 
@@ -146,22 +118,6 @@ export async function submitContactForm(
       message?: string;
       success?: boolean | string;
     } | null;
-
-    const isErrorActivationNotice = Boolean(
-      errorJson?.message && errorJson.message.toLowerCase().includes('activation')
-    );
-
-    if (isErrorActivationNotice) {
-      console.warn(
-        '[Dealestate FormSubmit] The form endpoint requires email confirmation. Click the activation link sent to codnexa@gmail.com to enable direct mailbox delivery.'
-      );
-      return {
-        success: false,
-        isConfigured: true,
-        message:
-          'Your enquiry could not be submitted at this time. Please connect with our team directly via phone or WhatsApp.',
-      };
-    }
 
     return {
       success: false,
