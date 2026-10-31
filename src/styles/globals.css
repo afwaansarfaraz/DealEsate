@@ -1,0 +1,67 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Offset for sticky header navigation anchors */
+  section[id] {
+    scroll-margin-top: calc(var(--header-height) + 16px);
+  }
+
+  @media (max-width: 768px) {
+    section[id] {
+      scroll-margin-top: calc(var(--header-height-mobile) + 12px);
+    }
+  }
+
+  /* Accessible focus states */
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+
+  /* Prevent horizontal overflow strictly */
+  body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+  }
+}
+
+@layer utilities {
+  /* Subtle glass card style */
+  .glass-card {
+    background: rgba(22, 29, 43, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Gold gradient text */
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #F3E5AB 0%, #D4A017 50%, #B88910 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

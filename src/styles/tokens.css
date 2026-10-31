@@ -1,0 +1,31 @@
+:root {
+  /* Brand Tokens */
+  --color-navy: #0B1F44;
+  --color-navy-dark: #07152E;
+  --color-navy-deep: #050D1D;
+  --color-gold: #D4A017;
+  --color-gold-hover: #B88910;
+  --color-gold-light: #F3E5AB;
+  --color-gold-glow: rgba(212, 160, 23, 0.25);
+  
+  /* Surfaces & Backgrounds */
+  --color-dark-bg: #0E1117;
+  --color-dark-surface: #141A24;
+  --color-dark-card: #161D2B;
+  --color-dark-border: rgba(255, 255, 255, 0.08);
+  --color-warm-surface: #F5F3E8;
+
+  /* Typography Colors */
+  --color-primary-text: #F8FAFC;
+  --color-secondary-text: #94A3B8;
+  --color-muted-text: #64748B;
+
+  /* Layout */
+  --header-height: 72px;
+  --header-height-mobile: 64px;
+
+  /* Motion Defaults */
+  --transition-fast: 150ms ease-out;
+  --transition-normal: 220ms ease-out;
+  --transition-slow: 400ms ease-out;
+}
