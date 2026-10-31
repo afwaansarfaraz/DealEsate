@@ -7,7 +7,8 @@
  * Security & Reliability Rules:
  * 1. Credentials and endpoint URLs managed via environment variables.
  * 2. Uses verified production fallback (FormSubmit AJAX to codnexa@gmail.com).
- * 3. Accurate loading, success, and error states with zero fake simulation.
+ * 3. Never shows raw activation or unconfirmed messages to customers.
+ * 4. Accurate loading, success, and error states with zero fake simulation.
  */
 
 export interface ContactFormData {
@@ -77,6 +78,7 @@ export async function submitContactForm(
           additional_requirements: data.additionalRequirements || 'None specified',
           _subject: `New Dealestate Growth Inquiry: ${data.leadRequirement} - ${data.fullName}`,
           _template: 'table',
+          _captcha: 'false',
         }
       : {
           access_key: configuredEndpoint,
@@ -106,22 +108,37 @@ export async function submitContactForm(
         success?: boolean | string;
       } | null;
 
-      if (responseData && (responseData.success === false || responseData.success === 'false')) {
+      // FormSubmit returns { success: "true", message: "..." } when activated and accepted.
+      // If the endpoint is unactivated, FormSubmit returns { success: "false", message: "This form needs Activation..." }.
+      const isActivationNotice = Boolean(
+        responseData?.message && responseData.message.toLowerCase().includes('activation')
+      );
+
+      const isExplicitFailure =
+        responseData &&
+        (responseData.success === false ||
+          responseData.success === 'false' ||
+          isActivationNotice);
+
+      if (isExplicitFailure) {
+        if (isActivationNotice) {
+          console.warn(
+            '[Dealestate FormSubmit] The form endpoint requires email confirmation. Click the activation link sent to codnexa@gmail.com to enable direct mailbox delivery.'
+          );
+        }
+
         return {
           success: false,
           isConfigured: true,
           message:
-            responseData.message ||
-            'Submission was not processed successfully. Please try again or reach out to our team directly.',
+            'Your enquiry could not be submitted at this time. Please connect with our team directly via phone or WhatsApp.',
         };
       }
 
       return {
         success: true,
         isConfigured: true,
-        message:
-          responseData?.message ||
-          'Thank you. Your inquiry has been successfully received. Our onboarding desk will review your locality requirements and reach out promptly.',
+        message: 'Your enquiry has been submitted successfully! Our team will get back to you soon.',
       };
     }
 
@@ -138,7 +155,7 @@ export async function submitContactForm(
     return {
       success: false,
       isConfigured: true,
-      message: `Unable to submit inquiry at this time (${errorMsg}). Please check your connection or connect directly via WhatsApp.`,
+      message: `Unable to submit enquiry at this time (${errorMsg}). Please check your connection or connect directly via WhatsApp.`,
     };
   }
 }

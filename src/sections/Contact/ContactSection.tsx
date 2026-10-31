@@ -13,6 +13,7 @@ import {
   Linkedin,
   Instagram,
   Globe,
+  Loader2,
 } from 'lucide-react';
 import { SectionContainer } from '../../components/ui/SectionContainer';
 import { SectionHeading } from '../../components/ui/SectionHeading';
@@ -108,6 +109,11 @@ export const ContactSection: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Prevent duplicate submissions while in progress
+    if (status === 'submitting') {
+      return;
+    }
+
     if (!validate()) {
       setStatus('error');
       setStatusMessage('Please correct the highlighted errors before submitting.');
@@ -122,9 +128,22 @@ export const ContactSection: React.FC = () => {
     if (result.success) {
       setStatus('success');
       setStatusMessage(result.message);
+      // Clear form inputs only upon confirmed success
+      setFormData({
+        fullName: '',
+        businessName: '',
+        phone: '',
+        email: '',
+        leadRequirement: 'Rental',
+        preferredLocation: '',
+        additionalRequirements: '',
+        consent: true,
+      });
+      setFormErrors({});
     } else {
       setStatus('error');
       setStatusMessage(result.message);
+      // Preserve customer's form inputs on failure so they can retry
     }
   };
 
@@ -315,37 +334,27 @@ export const ContactSection: React.FC = () => {
           <div className="lg:col-span-7">
             <div className="bg-navy-900/90 rounded-2xl p-6 sm:p-8 border border-white/10 shadow-2xl backdrop-blur-md">
               {status === 'success' ? (
-                <div className="py-12 text-center space-y-4">
+                <div className="py-12 text-center space-y-4" role="status" aria-live="polite">
                   <div className="w-14 h-14 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-700 mx-auto flex items-center justify-center">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h3 className="text-xl font-bold text-white font-serif">
-                    Inquiry Received
+                    Enquiry Received
                   </h3>
-                  <p className="text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
+                  <p className="text-sm text-slate-200 max-w-md mx-auto leading-relaxed font-medium">
                     {statusMessage ||
-                      `Thank you, ${formData.fullName}. Our team has received your requirement for ${formData.preferredLocation}. An onboarding specialist will connect with you shortly.`}
+                      'Your enquiry has been submitted successfully! Our team will get back to you soon.'}
                   </p>
                   <Button
                     onClick={() => {
                       setStatus('idle');
                       setStatusMessage('');
-                      setFormData({
-                        fullName: '',
-                        businessName: '',
-                        phone: '',
-                        email: '',
-                        leadRequirement: 'Rental',
-                        preferredLocation: '',
-                        additionalRequirements: '',
-                        consent: true,
-                      });
                     }}
                     variant="outline"
                     size="sm"
                     className="mt-4"
                   >
-                    Submit Another Inquiry
+                    Submit Another Enquiry
                   </Button>
                 </div>
               ) : (
@@ -360,10 +369,10 @@ export const ContactSection: React.FC = () => {
                   </div>
 
                   {status === 'error' && (
-                    <div className="p-3.5 rounded-xl bg-red-950/80 border border-red-700/60 text-xs text-red-200 space-y-2">
+                    <div className="p-3.5 rounded-xl bg-red-950/80 border border-red-700/60 text-xs text-red-200 space-y-2" role="alert">
                       <div className="flex items-start gap-2">
                         <AlertCircle className="w-4 h-4 shrink-0 text-red-400 mt-0.5" />
-                        <span>{statusMessage}</span>
+                        <span className="font-medium">{statusMessage}</span>
                       </div>
                       <div className="flex flex-wrap gap-2.5 pt-2 border-t border-red-900/40 text-[11px]">
                         <span className="text-slate-300 font-medium">Instant Assistance:</span>
@@ -402,11 +411,12 @@ export const ContactSection: React.FC = () => {
                         autoComplete="name"
                         value={formData.fullName}
                         onChange={handleChange}
+                        disabled={status === 'submitting'}
                         required
                         aria-invalid={Boolean(formErrors.fullName)}
                         aria-describedby={formErrors.fullName ? 'fullName-error' : undefined}
                         placeholder="e.g. Rahul Sharma"
-                        className={`w-full px-3.5 py-2.5 rounded-lg bg-navy-950/80 border text-sm text-white placeholder-slate-500 focus-visible:outline-none focus-visible:ring-1 ${
+                        className={`w-full px-3.5 py-2.5 rounded-lg bg-navy-950/80 border text-sm text-white placeholder-slate-500 focus-visible:outline-none focus-visible:ring-1 disabled:opacity-60 disabled:cursor-not-allowed ${
                           formErrors.fullName
                             ? 'border-red-500 focus-visible:ring-red-500'
                             : 'border-white/15 focus-visible:border-gold focus-visible:ring-gold'
@@ -430,11 +440,12 @@ export const ContactSection: React.FC = () => {
                         autoComplete="organization"
                         value={formData.businessName}
                         onChange={handleChange}
+                        disabled={status === 'submitting'}
                         required
                         aria-invalid={Boolean(formErrors.businessName)}
                         aria-describedby={formErrors.businessName ? 'businessName-error' : undefined}
                         placeholder="e.g. Apex Realty Consultants"
-                        className={`w-full px-3.5 py-2.5 rounded-lg bg-navy-950/80 border text-sm text-white placeholder-slate-500 focus-visible:outline-none focus-visible:ring-1 ${
+                        className={`w-full px-3.5 py-2.5 rounded-lg bg-navy-950/80 border text-sm text-white placeholder-slate-500 focus-visible:outline-none focus-visible:ring-1 disabled:opacity-60 disabled:cursor-not-allowed ${
                           formErrors.businessName
                             ? 'border-red-500 focus-visible:ring-red-500'
                             : 'border-white/15 focus-visible:border-gold focus-visible:ring-gold'
@@ -461,11 +472,12 @@ export const ContactSection: React.FC = () => {
                         autoComplete="tel"
                         value={formData.phone}
                         onChange={handleChange}
+                        disabled={status === 'submitting'}
                         required
                         aria-invalid={Boolean(formErrors.phone)}
                         aria-describedby={formErrors.phone ? 'phone-error' : undefined}
                         placeholder="+91 98765 43210"
-                        className={`w-full px-3.5 py-2.5 rounded-lg bg-navy-950/80 border text-sm text-white placeholder-slate-500 focus-visible:outline-none focus-visible:ring-1 ${
+                        className={`w-full px-3.5 py-2.5 rounded-lg bg-navy-950/80 border text-sm text-white placeholder-slate-500 focus-visible:outline-none focus-visible:ring-1 disabled:opacity-60 disabled:cursor-not-allowed ${
                           formErrors.phone
                             ? 'border-red-500 focus-visible:ring-red-500'
                             : 'border-white/15 focus-visible:border-gold focus-visible:ring-gold'
@@ -489,11 +501,12 @@ export const ContactSection: React.FC = () => {
                         autoComplete="email"
                         value={formData.email}
                         onChange={handleChange}
+                        disabled={status === 'submitting'}
                         required
                         aria-invalid={Boolean(formErrors.email)}
                         aria-describedby={formErrors.email ? 'email-error' : undefined}
                         placeholder="broker@domain.com"
-                        className={`w-full px-3.5 py-2.5 rounded-lg bg-navy-950/80 border text-sm text-white placeholder-slate-500 focus-visible:outline-none focus-visible:ring-1 ${
+                        className={`w-full px-3.5 py-2.5 rounded-lg bg-navy-950/80 border text-sm text-white placeholder-slate-500 focus-visible:outline-none focus-visible:ring-1 disabled:opacity-60 disabled:cursor-not-allowed ${
                           formErrors.email
                             ? 'border-red-500 focus-visible:ring-red-500'
                             : 'border-white/15 focus-visible:border-gold focus-visible:ring-gold'
@@ -518,7 +531,8 @@ export const ContactSection: React.FC = () => {
                         name="leadRequirement"
                         value={formData.leadRequirement}
                         onChange={handleChange}
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-navy-950/80 border border-white/15 text-sm text-white focus-visible:outline-none focus-visible:border-gold focus-visible:ring-1 focus-visible:ring-gold"
+                        disabled={status === 'submitting'}
+                        className="w-full px-3.5 py-2.5 rounded-lg bg-navy-950/80 border border-white/15 text-sm text-white focus-visible:outline-none focus-visible:border-gold focus-visible:ring-1 focus-visible:ring-gold disabled:opacity-60 disabled:cursor-not-allowed"
                       >
                         <option value="Rental">Rental Owner Leads</option>
                         <option value="Resale">Resale Owner Leads</option>
@@ -538,11 +552,12 @@ export const ContactSection: React.FC = () => {
                         autoComplete="address-level2"
                         value={formData.preferredLocation}
                         onChange={handleChange}
+                        disabled={status === 'submitting'}
                         required
                         aria-invalid={Boolean(formErrors.preferredLocation)}
                         aria-describedby={formErrors.preferredLocation ? 'location-error' : undefined}
                         placeholder="e.g. Lucknow, Gomti Nagar / Indira Nagar"
-                        className={`w-full px-3.5 py-2.5 rounded-lg bg-navy-950/80 border text-sm text-white placeholder-slate-500 focus-visible:outline-none focus-visible:ring-1 ${
+                        className={`w-full px-3.5 py-2.5 rounded-lg bg-navy-950/80 border text-sm text-white placeholder-slate-500 focus-visible:outline-none focus-visible:ring-1 disabled:opacity-60 disabled:cursor-not-allowed ${
                           formErrors.preferredLocation
                             ? 'border-red-500 focus-visible:ring-red-500'
                             : 'border-white/15 focus-visible:border-gold focus-visible:ring-gold'
@@ -562,13 +577,14 @@ export const ContactSection: React.FC = () => {
                       Additional Requirements <span className="text-slate-400 font-normal">(Optional)</span>
                     </label>
                     <textarea
-                      id="additionalRequirements"
-                      name="additionalRequirements"
-                      rows={3}
-                      value={formData.additionalRequirements}
-                      onChange={handleChange}
-                      placeholder="Share target property brackets, required monthly lead volume, or preferred human sales support workflows..."
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-navy-950/80 border border-white/15 text-sm text-white placeholder-slate-500 focus-visible:outline-none focus-visible:border-gold focus-visible:ring-1 focus-visible:ring-gold resize-none"
+                        id="additionalRequirements"
+                        name="additionalRequirements"
+                        rows={3}
+                        value={formData.additionalRequirements}
+                        onChange={handleChange}
+                        disabled={status === 'submitting'}
+                        placeholder="Share target property brackets, required monthly lead volume, or preferred human sales support workflows..."
+                        className="w-full px-3.5 py-2.5 rounded-lg bg-navy-950/80 border border-white/15 text-sm text-white placeholder-slate-500 focus-visible:outline-none focus-visible:border-gold focus-visible:ring-1 focus-visible:ring-gold resize-none disabled:opacity-60 disabled:cursor-not-allowed"
                     />
                   </div>
 
@@ -580,7 +596,8 @@ export const ContactSection: React.FC = () => {
                       name="consent"
                       checked={formData.consent}
                       onChange={handleChange}
-                      className="mt-0.5 rounded border-white/20 bg-navy-950 text-gold focus:ring-gold"
+                      disabled={status === 'submitting'}
+                      className="mt-0.5 rounded border-white/20 bg-navy-950 text-gold focus:ring-gold disabled:opacity-60 disabled:cursor-not-allowed"
                     />
                     <label htmlFor="consent" className="text-xs text-slate-400 leading-snug">
                       I agree to receive verified property-owner lead details and communications from Dealestate.
@@ -598,10 +615,16 @@ export const ContactSection: React.FC = () => {
                     fullWidth
                     size="lg"
                     disabled={status === 'submitting'}
-                    iconRight={<Send className="w-4 h-4" />}
+                    iconRight={
+                      status === 'submitting' ? (
+                        <Loader2 className="w-4 h-4 animate-spin text-navy-950" />
+                      ) : (
+                        <Send className="w-4 h-4" />
+                      )
+                    }
                     className="mt-3"
                   >
-                    {status === 'submitting' ? 'Submitting Inquiry...' : 'Submit Growth Inquiry'}
+                    {status === 'submitting' ? 'Submitting Enquiry...' : 'Submit Growth Inquiry'}
                   </Button>
 
                   <div className="pt-2 flex items-center justify-center gap-2 text-[11px] text-slate-400">
