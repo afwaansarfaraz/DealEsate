@@ -14,7 +14,7 @@ import {
 import { SectionContainer } from '../../components/ui/SectionContainer';
 import { SectionHeading } from '../../components/ui/SectionHeading';
 import { Button } from '../../components/ui/Button';
-import { solutionsData, SolutionItem } from '../../data/solutions';
+import { solutionsData, type SolutionItem } from '../../data/solutions';
 
 const iconMap = {
   Building2: Building2,
@@ -31,8 +31,10 @@ interface CardStyleConfig {
   containerClass: string;
   iconBgClass: string;
   eyebrowClass: string;
+  numberClass: string;
   titleClass: string;
   descClass: string;
+  benefitsBorderClass: string;
   bulletIconClass: string;
   bulletTextClass: string;
   linkClass: string;
@@ -47,8 +49,10 @@ const getCardStyle = (item: SolutionItem): CardStyleConfig => {
           'md:col-span-2 lg:col-span-3 bg-gradient-to-br from-[#FCFBF8] via-[#FAF6ED] to-[#F5EEE0] border-2 border-gold/50 shadow-md hover:shadow-xl hover:border-gold',
         iconBgClass: 'bg-navy-900 text-gold border border-gold/40 shadow-xs',
         eyebrowClass: 'bg-amber-100 text-gold-deep border border-gold/40 font-bold',
+        numberClass: 'text-navy-900/80',
         titleClass: 'text-navy-900 font-serif text-xl sm:text-2xl',
         descClass: 'text-slate-700',
+        benefitsBorderClass: 'border-slate-200/70',
         bulletIconClass: 'text-emerald-700',
         bulletTextClass: 'text-navy-950 font-medium',
         linkClass: 'text-navy-950 font-bold hover:text-gold-deep',
@@ -61,8 +65,10 @@ const getCardStyle = (item: SolutionItem): CardStyleConfig => {
           'bg-gradient-to-br from-navy-900 via-navy to-navy-surface text-white border-2 border-gold/40 shadow-card-dark hover:border-gold hover:shadow-[0_12px_36px_rgba(16,43,78,0.35)]',
         iconBgClass: 'bg-gold text-navy-950 shadow-sm',
         eyebrowClass: 'bg-gold/20 text-gold-light border border-gold/40 font-bold',
+        numberClass: 'text-gold-light',
         titleClass: 'text-white font-serif text-lg sm:text-xl',
         descClass: 'text-slate-200',
+        benefitsBorderClass: 'border-white/10',
         bulletIconClass: 'text-gold',
         bulletTextClass: 'text-slate-100',
         linkClass: 'text-gold-light font-bold hover:text-white',
@@ -75,8 +81,10 @@ const getCardStyle = (item: SolutionItem): CardStyleConfig => {
           'bg-[#F0F5FA] border border-blue-200/80 shadow-card-light hover:shadow-card-hover hover:border-blue-400',
         iconBgClass: 'bg-white text-navy-900 border border-slate-200/90 shadow-2xs',
         eyebrowClass: 'bg-blue-100/80 text-navy-800 border border-blue-200 font-semibold',
+        numberClass: 'text-navy-900/80',
         titleClass: 'text-navy-900 font-serif text-lg sm:text-xl',
         descClass: 'text-slate-600',
+        benefitsBorderClass: 'border-blue-200/60',
         bulletIconClass: 'text-emerald-600',
         bulletTextClass: 'text-slate-700',
         linkClass: 'text-navy-900 font-semibold hover:text-gold-deep',
@@ -89,8 +97,10 @@ const getCardStyle = (item: SolutionItem): CardStyleConfig => {
           'bg-[#FAF6ED] border border-amber-200/70 shadow-card-light hover:shadow-card-hover hover:border-gold/60',
         iconBgClass: 'bg-amber-100 text-gold-deep border border-gold/30',
         eyebrowClass: 'bg-amber-100 text-amber-900 border border-amber-300 font-bold',
+        numberClass: 'text-navy-900/80',
         titleClass: 'text-navy-900 font-serif text-lg sm:text-xl',
         descClass: 'text-slate-600',
+        benefitsBorderClass: 'border-amber-200/60',
         bulletIconClass: 'text-emerald-600',
         bulletTextClass: 'text-slate-700',
         linkClass: 'text-navy-900 font-semibold hover:text-gold-deep',
@@ -103,8 +113,10 @@ const getCardStyle = (item: SolutionItem): CardStyleConfig => {
           'bg-white border border-slate-200/90 shadow-card-light hover:shadow-card-hover hover:border-blue-300',
         iconBgClass: 'bg-[#EAF1F8] text-navy-800 border border-slate-200',
         eyebrowClass: 'bg-slate-100 text-slate-700 border border-slate-200 font-semibold',
+        numberClass: 'text-navy-900/80',
         titleClass: 'text-navy-900 font-serif text-lg sm:text-xl',
         descClass: 'text-slate-600',
+        benefitsBorderClass: 'border-slate-200/70',
         bulletIconClass: 'text-emerald-600',
         bulletTextClass: 'text-slate-700',
         linkClass: 'text-navy-900 font-semibold hover:text-gold-deep',
@@ -117,8 +129,10 @@ const getCardStyle = (item: SolutionItem): CardStyleConfig => {
           'bg-white border border-slate-200/90 shadow-card-light hover:shadow-card-hover hover:border-gold/40',
         iconBgClass: 'bg-amber-50 text-gold-deep border border-gold/25',
         eyebrowClass: 'bg-amber-50/80 text-amber-900 border border-amber-200/60 font-semibold',
+        numberClass: 'text-navy-900/80',
         titleClass: 'text-navy-900 font-serif text-lg sm:text-xl',
         descClass: 'text-slate-600',
+        benefitsBorderClass: 'border-slate-200/70',
         bulletIconClass: 'text-emerald-600',
         bulletTextClass: 'text-slate-700',
         linkClass: 'text-navy-900 font-semibold hover:text-gold-deep',
@@ -132,8 +146,10 @@ const getCardStyle = (item: SolutionItem): CardStyleConfig => {
           'bg-white border border-slate-200/90 shadow-card-light hover:shadow-card-hover hover:border-emerald-400/50',
         iconBgClass: 'bg-emerald-50 text-emerald-800 border border-emerald-200/70',
         eyebrowClass: 'bg-emerald-50 text-emerald-800 border border-emerald-200/70 font-semibold',
+        numberClass: 'text-navy-900/80',
         titleClass: 'text-navy-900 font-serif text-lg sm:text-xl',
         descClass: 'text-slate-600',
+        benefitsBorderClass: 'border-slate-200/70',
         bulletIconClass: 'text-emerald-600',
         bulletTextClass: 'text-slate-700',
         linkClass: 'text-navy-900 font-semibold hover:text-gold-deep',
@@ -156,7 +172,7 @@ export const SolutionsSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {solutionsData.map((item, idx) => {
             const IconComponent = iconMap[item.icon as keyof typeof iconMap] || Building2;
-            const isHeroItem = idx === 0;
+            const isHeroItem = item.id === 'owner-leads';
             const styles = getCardStyle(item);
 
             return (
@@ -171,7 +187,7 @@ export const SolutionsSection: React.FC = () => {
                       <span className={`p-3 rounded-xl transition-transform duration-200 group-hover:scale-105 ${styles.iconBgClass}`}>
                         <IconComponent className="w-5 h-5" />
                       </span>
-                      <span className={`text-xs font-mono font-bold ${item.id === 'human-support' ? 'text-gold-light' : 'text-navy-900/80'}`}>
+                      <span className={`text-xs font-mono font-bold ${styles.numberClass}`}>
                         0{idx + 1}
                       </span>
                     </div>
@@ -191,9 +207,7 @@ export const SolutionsSection: React.FC = () => {
                   </p>
 
                   <div
-                    className={`space-y-2 pt-4 border-t ${
-                      item.id === 'human-support' ? 'border-white/10' : 'border-slate-200/70'
-                    } mb-6 ${
+                    className={`space-y-2 pt-4 border-t ${styles.benefitsBorderClass} mb-6 ${
                       isHeroItem ? 'grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 space-y-0' : ''
                     }`}
                   >

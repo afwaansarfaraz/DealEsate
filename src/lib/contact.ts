@@ -106,6 +106,16 @@ export async function submitContactForm(
         success?: boolean | string;
       } | null;
 
+      if (responseData && (responseData.success === false || responseData.success === 'false')) {
+        return {
+          success: false,
+          isConfigured: true,
+          message:
+            responseData.message ||
+            'Submission was not processed successfully. Please try again or reach out to our team directly.',
+        };
+      }
+
       return {
         success: true,
         isConfigured: true,
